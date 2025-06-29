@@ -1,8 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
-    site: 'https://github.com/GabrielAedoPozo',
-    base: 'Kusisa-',
+  site: 'https://gabrielaedopozo.github.io/Kusisa-/',
+  base: '/Kusisa-/',
 });
