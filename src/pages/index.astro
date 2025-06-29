@@ -1,11 +1,260 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/style.css";
+import '@fontsource/dm-serif-text';
+
+
 ---
 
 <Layout>
-	<Welcome />
+    <Navbar />
+    
+    <section id="inicio">
+        <h1>Kusisa Repostería</h1>
+        <p>Endulzamos tus momentos especiales</p>
+        <i class="fa-solid fa-arrow-down"></i>
+    </section>
+
+    <section id="especialidades">
+        <div class="container">
+            <h2 class="scroll-reveal">Nuestras Especialidades</h2>
+            <p class="section-subtitle scroll-reveal delay-1">Creaciones únicas hechas con amor y los mejores ingredientes</p>
+            <div class="products-grid">
+                <div class="product-card scroll-reveal-scale delay-2">
+                    <div class="product-image">
+                        <i class="fa-solid fa-birthday-cake"></i>
+                    </div>
+                    <h3>Tortas Personalizadas</h3>
+                    <p>Diseños únicos para celebraciones especiales. Cada torta es una obra de arte comestible.</p>
+                </div>
+                <div class="product-card scroll-reveal-scale delay-3">
+                    <div class="product-image">
+                        <i class="fa-solid fa-cookie-bite"></i>
+                    </div>
+                    <h3>Cupcakes Gourmet</h3>
+                    <p>Deliciosos cupcakes con sabores únicos y decoraciones espectaculares.</p>
+                </div>
+                <div class="product-card scroll-reveal-scale delay-4">
+                    <div class="product-image">
+                        <i class="fa-solid fa-candy-cane"></i>
+                    </div>
+                    <h3>Postres Tradicionales</h3>
+                    <p>Los clásicos de siempre con un toque especial que los hace inolvidables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text scroll-reveal-left">
+                    <h2>Sobre Nosotros</h2>
+                    <p>En <strong>Kusisa Repostería</strong>, cada dulce cuenta una historia. Desde 2020, nos hemos dedicado a crear momentos especiales a través de nuestras creaciones artesanales.</p>
+                    <p>Nuestra pasión por la repostería nos impulsa a innovar constantemente, combinando técnicas tradicionales con sabores modernos para sorprender a nuestros clientes.</p>
+                    <div class="values">
+                        <div class="value-item scroll-reveal delay-2">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Hecho con amor</span>
+                        </div>
+                        <div class="value-item scroll-reveal delay-3">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Ingredientes frescos</span>
+                        </div>
+                        <div class="value-item scroll-reveal delay-4">
+                            <i class="fa-solid fa-star"></i>
+                            <span>Calidad premium</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image scroll-reveal-right">
+                    <div class="image-placeholder">
+                        <i class="fa-solid fa-utensils"></i>
+                        <p>Nuestra cocina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <div class="container">
+            <h2 class="scroll-reveal">Lo que dicen nuestros clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card scroll-reveal-scale delay-1">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"La torta de cumpleaños de mi hija fue perfecta. El diseño superó nuestras expectativas y el sabor fue increíble."</p>
+                    <div class="client-info">
+                        <strong>María González</strong>
+                        <span>Cliente frecuente</span>
+                    </div>
+                </div>
+                <div class="testimonial-card scroll-reveal-scale delay-2">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Los cupcakes para nuestra boda fueron espectaculares. Todos los invitados quedaron encantados."</p>
+                    <div class="client-info">
+                        <strong>Carlos y Ana</strong>
+                        <span>Boda 2024</span>
+                    </div>
+                </div>
+                <div class="testimonial-card scroll-reveal-scale delay-3">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Atención personalizada y productos de alta calidad. Sin duda, la mejor repostería de la ciudad."</p>
+                    <div class="client-info">
+                        <strong>Roberto Silva</strong>
+                        <span>Evento corporativo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="container">
+            <h2 class="scroll-reveal">Contáctanos</h2>
+            <p class="section-subtitle scroll-reveal delay-1">¿Listo para endulzar tu próximo evento?</p>
+            <div class="contact-content">
+                <div class="contact-info scroll-reveal-left">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+51 946 126 449</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>kusisareposteria@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Horarios</h4>
+                            <p>Lun - Vie: 8:00 AM - 6:00 PM<br>Sáb: 9:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="contact-form scroll-reveal-right">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Tu nombre" required>
+                            <input type="email" placeholder="Tu email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Teléfono">
+                            <select required>
+                                <option value="">Tipo de evento</option>
+                                <option value="cumpleanos">Cumpleaños</option>
+                                <option value="boda">Boda</option>
+                                <option value="corporativo">Evento corporativo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Cuéntanos sobre tu evento y qué necesitas..." rows="4" required></textarea>
+                        <button type="submit">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botones flotantes de redes sociales -->
+    <div class="floating-social">
+        <a href="https://wa.me/51946126449" class="social-float whatsapp-float" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/kusisareposteria" class="social-float instagram-float" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/kusisareposteria" class="social-float facebook-float" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+    </div>
+
+    <script>
+        // Scroll Reveal Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.classList.contains('delay-1') ? 100 :
+                                     entry.target.classList.contains('delay-2') ? 200 :
+                                     entry.target.classList.contains('delay-3') ? 300 :
+                                     entry.target.classList.contains('delay-4') ? 400 : 0;
+                        
+                        setTimeout(() => {
+                            entry.target.classList.add('revealed');
+                        }, delay);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos con animaciones
+            const elementsToAnimate = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+            elementsToAnimate.forEach(el => observer.observe(el));
+
+            // Smooth scroll para enlaces
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = anchor.getAttribute('href');
+                    if (href) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Animación inicial del hero
+            setTimeout(() => {
+                const heroElements = document.querySelectorAll('#inicio h1, #inicio p, #inicio i');
+                heroElements.forEach((el, index) => {
+                    setTimeout(() => {
+                        const element = el as HTMLElement;
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }, 500);
+        });
+    </script>
 </Layout>
