@@ -2,6 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
- site: 'https://GabrielAedoPozo.github.io/Kusisa-/',
-  base: '/Kusisa-/',
+    site: 'https://GabrielAedoPozo.github.io',
+    base: 'Kusisa-',
 });
