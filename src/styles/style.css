@@ -35,6 +35,10 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
+a {
+    color: #D2B48C;
+}
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -630,6 +634,188 @@
     }
 }
 
+/* Media queries para modal en móvil */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 2% auto;
+        max-height: 90vh;
+        border-radius: 10px;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+        max-height: calc(90vh - 80px);
+    }
+    
+    .modal-header {
+        padding: 1rem 1.5rem;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .close {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .modal-image-container {
+        margin: 1rem 0;
+        border-radius: 10px;
+    }
+    
+    .modal-large-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 180px !important;
+        border-radius: 10px;
+    }
+    
+    .story-text h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .story-text h4 {
+        font-size: 1.2rem;
+        margin: 1.2rem 0 0.6rem;
+    }
+    
+    .story-text p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
+    }
+    
+    .timeline-modal {
+        margin: 1.5rem 0;
+    }
+    
+    .timeline-item-modal {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .timeline-date-modal {
+        font-size: 1rem;
+        min-width: auto;
+        font-weight: bold;
+    }
+    
+    .timeline-content-modal h5 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .timeline-content-modal p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .mission-vision-modal {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .mission-modal, .vision-modal {
+        padding: 1rem;
+    }
+    
+    .mission-modal h4, .vision-modal h4 {
+        font-size: 1.1rem;
+    }
+    
+    .mission-modal p, .vision-modal p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 98%;
+        margin: 1% auto;
+        max-height: 95vh;
+        border-radius: 8px;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+        max-height: calc(95vh - 70px);
+    }
+    
+    .modal-header {
+        padding: 0.8rem 1rem;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .modal-image-container {
+        margin: 0.5rem 0 1rem 0;
+        border-radius: 8px;
+    }
+    
+    .modal-large-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 150px !important;
+        border-radius: 8px;
+    }
+    
+    .story-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .story-text h4 {
+        font-size: 1.1rem;
+        margin: 1rem 0 0.5rem;
+    }
+    
+    .story-text p {
+        font-size: 0.9rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .timeline-item-modal {
+        padding: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .timeline-date-modal {
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content-modal h5 {
+        font-size: 0.95rem;
+    }
+    
+    .timeline-content-modal p {
+        font-size: 0.85rem;
+    }
+    
+    .mission-modal, .vision-modal {
+        padding: 0.8rem;
+    }
+    
+    .mission-modal h4, .vision-modal h4 {
+        font-size: 1rem;
+    }
+    
+    .mission-modal p, .vision-modal p {
+        font-size: 0.85rem;
+    }
+}
+
 /* Animaciones de Scroll Reveal */
 .scroll-reveal {
     opacity: 0;
@@ -733,6 +919,665 @@
     }
     60% {
         transform: translateY(-5px);
+    }
+}
+
+/* Estilos para la sección de catálogo */
+#catalogo {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    position: relative;
+}
+
+.catalog-carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-container {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.catalog-item {
+    min-width: 100%;
+    display: flex;
+    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.catalog-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.catalog-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.catalog-item:hover .catalog-image img {
+    transform: scale(1.05);
+}
+
+.catalog-info {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.catalog-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.catalog-info p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.catalog-info .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffd93d;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn.prev {
+    left: -30px;
+}
+
+.carousel-btn.next {
+    right: -30px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background: #ffd93d;
+    transform: scale(1.2);
+}
+
+.contact-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.cta-btn.whatsapp {
+    background: linear-gradient(45deg, #25d366, #128c7e);
+    color: white;
+}
+
+.cta-btn.phone {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para la página de historia (index2) */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffd93d;
+}
+
+.story-text h3 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: #ff6b6b;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.timeline {
+    margin-top: 3rem;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #ffd93d;
+}
+
+.timeline-date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd93d;
+    min-width: 80px;
+}
+
+.timeline-content h4 {
+    font-size: 1.3rem;
+    color: #ff6b6b;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #ccc;
+    margin: 0;
+}
+
+.story-images {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.story-image {
+    text-align: center;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.story-image img:hover {
+    transform: scale(1.05);
+}
+
+.story-image p {
+    margin-top: 1rem;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 4rem 0;
+}
+
+.mission, .vision {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 217, 61, 0.1));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mission h3, .vision h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffd93d;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mission p, .vision p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.back-to-main {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.back-to-main .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.back-to-main .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive para catálogo */
+@media (max-width: 768px) {
+    .catalog-item {
+        flex-direction: column;
+    }
+    
+    .catalog-image img {
+        height: 250px;
+    }
+    
+    .catalog-info {
+        padding: 2rem;
+    }
+    
+    .catalog-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .catalog-info .price {
+        font-size: 2rem;
+    }
+    
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .carousel-btn.prev {
+        left: -25px;
+    }
+    
+    .carousel-btn.next {
+        right: -25px;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 200px;
+        justify-content: center;
+    }
+}
+
+/* Responsive para página de historia */
+@media (max-width: 768px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .story-images {
+        position: static;
+    }
+    
+    .image-grid {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .story-image {
+        min-width: 200px;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .timeline-date {
+        min-width: auto;
+    }
+    
+    .story-text h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Estilo para el enlace de historia */
+.story-link {
+    color: #ffd93d;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.story-link:hover {
+    color: #ff6b6b;
+}
+
+.story-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    transition: width 0.3s ease;
+}
+
+.story-link:hover::after {
+    width: 100%;
+}
+
+/* Estilos para el modal de historia */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    margin: 1% auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 1400px;
+    max-height: 95vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(45deg, #D2B48C, #977850);
+    padding: 1.5rem 2rem;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.close {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 3rem;
+    color: white;
+    line-height: 1.6;
+    max-height: calc(95vh - 120px);
+    overflow-y: auto;
+}
+
+.story-content .story-text h3 {
+    color: #D2B48C;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.story-content .story-text h4 {
+    color: #D2B48C;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.8rem;
+}
+
+.story-content .story-text p {
+    color: #ccc;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.timeline-modal {
+    margin: 2rem 0;
+}
+
+.timeline-item-modal {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 3px solid #ffd93d;
+}
+
+.timeline-date-modal {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #D2B48C;
+    min-width: 60px;
+}
+
+.timeline-content-modal h5 {
+    color: #D2B48C;
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.timeline-content-modal p {
+    color: #ccc;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.mission-vision-modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.mission-modal, .vision-modal {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 217, 61, 0.1));
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para imágenes grandes en el modal */
+.modal-image-container {
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-large-image {
+    width: 600px;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.modal-large-image:hover {
+    transform: scale(1.02);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Layout mejorado para pantallas grandes */
+@media (min-width: 1200px) {
+    .story-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+    
+    .modal-image-container {
+        grid-column: 1 / -1;
+        margin: 1rem 0 2rem 0;
+    }
+    
+    .timeline-modal {
+        grid-column: 1 / -1;
+    }
+    
+    .mission-vision-modal {
+        grid-column: 1 / -1;
     }
 }
 
