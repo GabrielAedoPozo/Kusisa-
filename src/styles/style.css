@@ -1220,37 +1220,7 @@ html, body {
     color: #ccc;
 }
 
-.timeline {
-    margin-top: 3rem;
-}
 
-.timeline-item {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    border-left: 4px solid #ffd93d;
-}
-
-.timeline-date {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffd93d;
-    min-width: 80px;
-}
-
-.timeline-content h4 {
-    font-size: 1.3rem;
-    color: #ff6b6b;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content p {
-    color: #ccc;
-    margin: 0;
-}
 
 .story-images {
     position: sticky;
@@ -1348,8 +1318,8 @@ html, body {
     }
     
     .catalog-image img {
-        height: 250px;
-        width: 100%;
+        height: auto;
+        width: auto;
         max-width: 100%;
     }
     
