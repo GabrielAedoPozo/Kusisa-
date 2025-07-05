@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.719) 70%, #252525 100%), 
-                url('/Kusisa-/pastel.jpg') center/cover no-repeat;
+                url('/pastel.jpg') center/cover no-repeat;
     font-size: 3rem;
     flex-direction: column;
     text-align: center;
