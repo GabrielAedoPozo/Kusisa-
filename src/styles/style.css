@@ -297,7 +297,7 @@ html, body {
     background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3 );
     transition: transform 0.3s ease;
     border: 1px solid rgba(210, 180, 140, 0.1);
 }
@@ -610,6 +610,38 @@ html, body {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    /* Centrar contenido de "Sobre Nosotros" en móvil */
+    .about-content {
+        text-align: center;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    .about-text h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .about-text p {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .values {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .value-item {
+        justify-content: center;
+        text-align: center;
     }
     
     .form-group {
@@ -1409,7 +1441,52 @@ html, body {
     }
     
     .story-text h2 {
-        font-size: 2rem;
+        font-size: 2rem !important;
+        text-align: center !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .story-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .story-text h4 {
+        font-size: 1.1rem;
+        margin: 1rem 0 0.5rem;
+    }
+    
+    .story-text p {
+        font-size: 0.9rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .timeline-item-modal {
+        padding: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .timeline-date-modal {
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content-modal h5 {
+        font-size: 0.95rem;
+    }
+    
+    .timeline-content-modal p {
+        font-size: 0.85rem;
+    }
+    
+    .mission-modal, .vision-modal {
+        padding: 0.8rem;
+    }
+    
+    .mission-modal h4, .vision-modal h4 {
+        font-size: 1rem;
+    }
+    
+    .mission-modal p, .vision-modal p {
+        font-size: 0.85rem;
     }
 }
 
