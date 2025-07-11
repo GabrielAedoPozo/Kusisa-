@@ -134,92 +134,48 @@ import '@fontsource/dm-serif-text';
         </div>
     </section>
 
-    <section id="catalogo">
+    <section id="catalogo-preview">
         <div class="container">
             <h2 class="scroll-reveal">Nuestro Catálogo</h2>
-            <p class="section-subtitle scroll-reveal delay-1">Conoce nuestras deliciosas creaciones. Más en <a href="https://www.instagram.com/kusisa_reposteria/">Instagram</a></p>
+            <p class="section-subtitle scroll-reveal delay-1">Descubre todas nuestras deliciosas creaciones</p>
             
-            <div class="catalog-carousel scroll-reveal delay-2">
-                <button class="carousel-btn prev" id="prevBtn">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                
-                <div class="carousel-container">
-                    <div class="carousel-track" id="carouselTrack">
-                        <div class="catalog-item active">
-                            <div class="catalog-image">
-                                <img src="/torta-fresa.jpg" alt="Torta de chocolate">
-                            </div>
-                            <div class="catalog-info">
-                                <h3>Torta totalmente personalizada</h3>
-                                <p>Deliciosa torta de chocolate con ganache y decoración elegante</p>
-                            </div>
-                        </div>
-                        
-                        <div class="catalog-item">
-                            <div class="catalog-image">
-                                <img src="/cupcake.jpg" alt="Cupcakes variados">
-                            </div>
-                            <div class="catalog-info">
-                                <h3>Cupcakes Variados</h3>
-                                <p>Set de 12 cupcakes con diferentes sabores y decoraciones</p>
-                            </div>
-                        </div>
-                        
-                        <div class="catalog-item">
-                            <div class="catalog-image">
-                                <img src="/blippi-cake.jpg" alt="Torta de bodas">
-                            </div>
-                            <div class="catalog-info">
-                                <h3>Tortas distintas</h3>
-                                <p>Elegante torta de 3 pisos para celebraciones especiales</p>
-                            </div>
-                        </div>
-                        
-                        <div class="catalog-item">
-                            <div class="catalog-image">
-                                <img src="/galletas.jpg" alt="Macarons">
-                            </div>
-                            <div class="catalog-info">
-                                <h3>Galletas</h3>
-                                <p>Caja de 24 macarons en sabores gourmet</p>
-                            </div>
-                        </div>
-                        
-                        <div class="catalog-item">
-                            <div class="catalog-image">
-                                <img src="/torta-blanca.jpg" alt="Cheesecake">
-                            </div>
-                            <div class="catalog-info">
-                                <h3>Cheesecake de Frutos Rojos</h3>
-                                <p>Cremoso cheesecake con salsa de frutos rojos frescos</p>
-                            </div>
-                        </div>
-                        
-                        <div class="catalog-item">
-                            <div class="catalog-image">
-                                <img src="/brownies.jpg" alt="Brownies">
-                            </div>
-                            <div class="catalog-info">
-                                <h3>Brownies Gourmet</h3>
-                                <p>Brownies de chocolate con nueces y cobertura especial</p>
-                            </div>
-                        </div>
+            <div class="catalog-preview-content scroll-reveal delay-2">
+                <div class="preview-images">
+                    <div class="preview-image">
+                        <img src="/torta-fresa.jpg" alt="Torta personalizada">
+                    </div>
+                    <div class="preview-image">
+                        <img src="/cupcake.jpg" alt="Cupcakes variados">
+                    </div>
+                    <div class="preview-image">
+                        <img src="/brownies.jpg" alt="Brownies gourmet">
                     </div>
                 </div>
                 
-                <button class="carousel-btn next" id="nextBtn">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-            
-            <div class="carousel-dots" id="carouselDots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
-                <span class="dot" data-slide="3"></span>
-                <span class="dot" data-slide="4"></span>
-                <span class="dot" data-slide="5"></span>
+                <div class="preview-text">
+                    <h3>Explora Nuestras Creaciones</h3>
+                    <p>Desde tortas personalizadas hasta cupcakes gourmet, cada producto está hecho con amor y los mejores ingredientes. Descubre nuestra variedad completa de postres artesanales.</p>
+                    
+                    <div class="catalog-highlights">
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-birthday-cake"></i>
+                            <span>Tortas Personalizadas</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-cookie-bite"></i>
+                            <span>Cupcakes Gourmet</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Postres Especiales</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/catalogo" class="cta-btn catalog-btn">
+                        <i class="fa-solid fa-eye"></i>
+                        Ver Catálogo Completo
+                    </a>
+                </div>
             </div>
             
             <div class="contact-cta scroll-reveal delay-3">
@@ -338,53 +294,6 @@ import '@fontsource/dm-serif-text';
                     }, index * 200);
                 });
             }, 500);
-
-            // Carousel functionality
-            const track = document.getElementById('carouselTrack');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const dots = document.querySelectorAll('.dot');
-            
-            if (track && prevBtn && nextBtn) {
-                let currentSlide = 0;
-                const totalSlides = document.querySelectorAll('.catalog-item').length;
-                
-                function updateCarousel() {
-                    const slideWidth = 100;
-                    if (track) {
-                        track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
-                    }
-                    
-                    // Update dots
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentSlide);
-                    });
-                }
-                
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateCarousel();
-                }
-                
-                function prevSlide() {
-                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    updateCarousel();
-                }
-                
-                nextBtn.addEventListener('click', nextSlide);
-                prevBtn.addEventListener('click', prevSlide);
-                
-                // Dot navigation
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        currentSlide = index;
-                        updateCarousel();
-                    });
-                });
-                
-                // Auto-play carousel
-                setInterval(nextSlide, 5000);
-            }
 
             // Modal functionality
             const modal = document.getElementById('historyModal');
