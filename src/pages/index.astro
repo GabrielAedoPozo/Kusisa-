@@ -58,7 +58,7 @@ import '@fontsource/dm-serif-text';
                 <div class="about-text scroll-reveal-left">
                     <h2>Sobre Nosotros</h2>
                     <p>En <strong>Kusisa Repostería</strong>, cada dulce cuenta una historia. Desde 2020, nos hemos dedicado a crear momentos especiales a través de nuestras creaciones artesanales.</p>
-                    <p>Nuestra pasión por la repostería nos impulsa a innovar constantemente, combinando técnicas tradicionales con sabores modernos para sorprender a nuestros clientes. <a href="#" class="story-link" id="openHistoryModal">Conoce nuestra historia</a></p>
+                    <p>Nuestra pasión por la repostería nos impulsa a innovar constantemente, combinando técnicas tradicionales con sabores modernos para sorprender a nuestros clientes.</p>
                     <div class="values">
                         <div class="value-item scroll-reveal delay-2">
                             <i class="fa-solid fa-heart"></i>
@@ -76,8 +76,7 @@ import '@fontsource/dm-serif-text';
                 </div>
                 <div class="about-image scroll-reveal-right">
                     <div class="image-placeholder">
-                        <i class="fa-solid fa-kitchen-set"></i>
-                        <p>Nuestra cocina</p>
+                        <img src="/galletas-sn.jpg" alt="Nuestra cocina">
                     </div>
                 </div>
             </div>
@@ -190,37 +189,7 @@ import '@fontsource/dm-serif-text';
         </div>
     </section>
 
-    <!-- Modal de Historia -->
-    <div id="historyModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Nuestros Inicios</h2>
-                <span class="close" id="closeModal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="story-content">
-                    <!-- Contenedor para imagen grande -->
-                    <div class="modal-image-container">
-                        <img src="/img-kusisa.jpg" 
-                             alt="Historia de Kusisa Repostería" 
-                             class="modal-large-image">
-                    </div>
-                    
-                    <div class="story-text">
-                        <h3>¿Cómo comenzó todo?</h3>
-                        <p>En el año 2020, en plena pandemia, <strong>Kusisa Repostería</strong> nació de la pasión y el amor por la repostería de nuestra fundadora. Lo que comenzó como un hobby en la cocina de casa, se convirtió en el sueño de endulzar los momentos especiales de las familias.</p>
-                        
-                        <p>El nombre "Kusisa" proviene del quechua y significa "alegría" o "felicidad". Elegimos este nombre porque creemos que cada postre que creamos debe transmitir esa sensación de alegría que todos buscamos en los momentos especiales.</p>
-                        
-                        <h4>Los primeros pasos</h4>
-                        <p>Comenzamos vendiendo cupcakes a amigos y familiares. Cada pedido era una oportunidad para perfeccionar nuestras recetas y técnicas. La respuesta fue tan positiva que decidimos expandir nuestro catálogo.</p>
-                    
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Botones flotantes de redes sociales -->
     <div class="floating-social">
@@ -264,13 +233,13 @@ import '@fontsource/dm-serif-text';
             const elementsToAnimate = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
             elementsToAnimate.forEach(el => observer.observe(el));
 
-            // Smooth scroll para enlaces
-            const navLinks = document.querySelectorAll('a[href^="#"]');
+            // Smooth scroll para enlaces (excluyendo el modal)
+            const navLinks = document.querySelectorAll('a[href^="#"]:not(#openHistoryModal)');
             navLinks.forEach(anchor => {
                 anchor.addEventListener('click', (e) => {
                     e.preventDefault();
                     const href = anchor.getAttribute('href');
-                    if (href) {
+                    if (href && href !== '#') {
                         const target = document.querySelector(href);
                         if (target) {
                             const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
@@ -293,32 +262,6 @@ import '@fontsource/dm-serif-text';
                         element.style.transform = 'translateY(0)';
                     }, index * 200);
                 });
-            }, 500);
-
-            // Modal functionality
-            const modal = document.getElementById('historyModal');
-            const openModalBtn = document.getElementById('openHistoryModal');
-            const closeModalBtn = document.getElementById('closeModal');
-            
-            if (modal && openModalBtn && closeModalBtn) {
-                openModalBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                });
-                
-                closeModalBtn.addEventListener('click', () => {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                });
-                
-                window.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            }
-        });
+            }, 500);})
     </script>
 </Layout>
