@@ -12,6 +12,8 @@
     "@fontsource/dancing-script": "^5.2.6",
     "@fontsource/dm-serif-text": "^5.2.6",
     "@fontsource/onest": "^5.2.9",
-    "astro": "^5.10.1"
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.10.1",
+    "tailwindcss": "^4.1.17"
   }
 }

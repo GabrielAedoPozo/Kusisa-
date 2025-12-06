@@ -1,0 +1,73 @@
+<main class="min-h-screen bg-white flex flex-col items-center justify-center p-8 relative">
+    <div class="text-center animate-fade-in">
+        <div class="mb-8 animate-float">
+            <img 
+                src="/kusisa-cir.png" 
+                alt="Kusisa Repostería" 
+                class="w-48 h-48 md:w-64 md:h-64 mx-auto object-contain"
+            >
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Kusisa Repostería
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-600 mb-8 italic">
+            Endulzamos tus momentos especiales
+        </p>
+        
+        <div class="inline-flex items-center gap-3 px-6 py-3 border-2 border-gray-300 rounded-full bg-gray-50">
+            <i class="fa-solid fa-cookie-bite text-xl text-gray-700 animate-spin-slow"></i>
+            <span class="text-gray-800 font-medium">Sitio web en construcción</span>
+        </div>
+    </div>
+    
+    <footer class="absolute bottom-8 left-0 right-0 text-center">
+        <p class="text-sm text-gray-500">
+            Hecho con amor <i class="fa-solid fa-heart text-red-500 animate-pulse"></i> por Gabriel Aedo
+        </p>
+    </footer>
+</main>
+
+<style>
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 1s ease-out;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-spin-slow {
+        animation: spin 3s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
