@@ -7,7 +7,63 @@ import Footer from '../components/footer.astro';
 <Layout>
 	<Header />
 
-	
+	<main>
+		<div class="relative w-full h-screen">
+			<img src="/img/nosotros.png" alt="Equipo de Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover">
+			<div class="absolute inset-0 bg-gradient-to-b from-black/55 to-black/25"></div>
+
+			<div class="relative z-10 flex flex-col justify-center items-center text-center h-full px-6 sm:px-10 md:px-14 py-12 gap-6 text-white">
+				<p class="text-lg sm:text-xl font-medium">Desde 2020</p>
+				<blockquote class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-serif italic leading-relaxed text-center">
+					Nuestra Historia
+				</blockquote>
+			</div>
+		</div>
+
+		<section class="mt-30 flex flex-none">
+			<img src="/img/galletas-sn.jpg" alt="" class="h-150 pl-30">
+			
+			<div class="ml-30">
+				<blockquote class="text-7xl font-serif italic leading-relaxed">
+					Raíces y tradición
+				</blockquote>
+
+				<blockquote class="text-2xl font-serif italic leading-relaxed mt-10">
+					Todo comenzó en una pequeña cocina de techos altos, donde el sonido de <br> los batidores era la bande sonora de nuestras <br> <br> <br>
+					Insipiradas por las recetas familiares que cruzaron océanos, decidimos <br> fundar Kusisa Reposteria como un refugio para los sabores honestos. <br> No buscamos
+					la perfección industrial, sino la calidez de lo hecho a mano, <br> donde cada irregularidad cuenta una historia diferente
+				</blockquote>
+			</div>
+		</section>
+
+		<section class="mt-24 px-6 sm:px-10 md:px-14 flex flex-col items-center text-center gap-6 py-16 bg-[#fdfaf6]">
+			<div class="text-4xl text-[#e3b87e]">&ldquo;&rdquo;</div>
+			<blockquote class="max-w-5xl text-3xl sm:text-4xl md:text-5xl font-serif italic leading-relaxed text-gray-900">
+				Seleccionamos cada grano de cacao y cada pizca de harina con rigor. La calidad no es negociable, es nuestro lenguaje.
+			</blockquote>
+			<div class="flex items-center gap-4 text-gray-900 uppercase tracking-[0.2em] text-sm font-semibold">
+				<span class="w-12 h-px bg-[#e3b87e] inline-block"></span>
+				<span>Zaida</span>
+			</div>
+		</section>
+
+		<section class="mt-30 flex flex-none ml-40">
+			
+			<div class="mr-30">
+				<blockquote class="text-7xl font-serif italic leading-relaxed">
+					Materia Prima
+				</blockquote>
+
+				<blockquote class="text-2xl font-serif italic leading-relaxed mt-10">
+					Todo comenzó en una pequeña cocina de techos altos, donde el sonido de <br> los batidores era la bande sonora de nuestras <br> <br> <br>
+					Insipiradas por las recetas familiares que cruzaron océanos, decidimos <br> fundar Kusisa Reposteria como un refugio para los sabores honestos. <br> No buscamos
+					la perfección industrial, sino la calidez de lo hecho a mano, <br> donde cada irregularidad cuenta una historia diferente
+				</blockquote>
+			</div>
+
+			<img src="/img/alfajores.jpeg" alt="" class="h-160 pr-30 w-170">
+		</section>
+	</main>
 
 	<Footer />
 </Layout>
