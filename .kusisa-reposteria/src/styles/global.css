@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+	.parallax-bg {
+		will-change: transform;
+		transition: transform 0.1s ease-out;
+	}
