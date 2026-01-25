@@ -1,81 +1,92 @@
-<main class="min-h-screen bg-white flex flex-col items-center justify-center p-8 relative">
-    <div class="text-center animate-fade-in">
-        <div class="mb-8 animate-float">
-            <img 
-                src="/kusisa-cir.png" 
-                alt="Kusisa Repostería" 
-                class="w-48 h-48 md:w-64 md:h-64 mx-auto object-contain"
-            >
-        </div>
-        
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Kusisa Repostería
-        </h1>
-        
-        <p class="text-lg md:text-xl text-gray-600 mb-8 italic">
-            Endulzamos tus momentos especiales
-        </p>
-        
-        <div class="inline-flex items-center gap-3 px-6 py-3 border-2 border-gray-300 rounded-full bg-gray-50">
-            <i class="fa-solid fa-cookie-bite text-xl text-gray-700 animate-spin-slow"></i>
-            <span class="text-gray-800 font-medium">Sitio web en construcción</span>
-        </div>
-    </div>
+<main>
     
-    <footer class="absolute bottom-8 left-0 right-0 text-center">
-        <p class="text-sm text-gray-500">
-            Hecho con <i class="fa-solid fa-heart text-red-500 animate-pulse"></i> por 
-            <a 
-                href="https://github.com/GabrielAedoPozo" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="text-gray-700 hover:text-gray-900 underline decoration-gray-400 decoration-2 underline-offset-2 hover:decoration-gray-600 transition-colors duration-200"
-            >
-                Gabriel Aedo
-            </a>
-        </p>
-    </footer>
+	<div class="flex flex-col gap-12 sm:gap-16 md:gap-20 px-4 sm:px-6 md:px-8">
+		<div class="pt-6 sm:pt-8 md:pt-10 flex justify-center">    
+			<h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-center">Postres personalizados</h1> 
+        </div>
+
+        <div class="relative h-[60vh] sm:h-[70vh] md:h-[80vh] w-full overflow-hidden" id="parallaxBanner">
+		    <div class="absolute inset-0 parallax-bg">
+			    <img src="/img/cupcakeP.avif" alt="" class="w-full h-full object-cover  scale-110">
+		    </div>
+	    </div>
+    </div>
+
+	<section class="pt-12 sm:pt-15 px-4 sm:px-6 md:px-8 flex flex-col justify-center items-center">
+		<h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-center">Mejores Sabores</h1>
+
+		<div class="flex flex-wrap md:flex-nowrap justify-center gap-4 sm:gap-6 md:gap-8 pt-6 md:pt-10 w-full">
+
+			<div class="text-center w-full sm:w-1/2 md:w-auto">
+				<img src="/img/galletas.jpeg" alt="" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+                <p class="mt-5">Clásicos</p>
+            </div>
+
+			<div class="text-center w-full sm:w-1/2 md:w-auto">
+				<img src="/img/chesecake.jpeg" alt="" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+                <p class="mt-5">Postres fríos</p>
+            </div>
+
+			<div class="text-center w-full sm:w-1/2 md:w-auto">
+				<img src="/img/alfajores.jpeg" alt="" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+                <p class="mt-5">Bocaditos</p>
+            </div>
+
+			<div class="text-center w-full sm:w-1/2 md:w-auto">
+				<img src="/img/personalizado.jpeg" alt="" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+                <p class="mt-5">Personalizados</p>
+            </div>
+
+        </div>
+    </section>
+
+	<section class="mt-20">
+		<blockquote class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-gray-900 leading-tight text-center">
+			“Pensados con amor, <br> elaborados con detalle y <br> servidos con elegancia.”
+		</blockquote>
+	</section>
+
+
+
+
+
+
+
+
 </main>
 
-<style>
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+<script>
+	const parallaxBanner = document.getElementById('parallaxBanner');
+	
+	if (parallaxBanner) {
+		const parallaxBg = parallaxBanner.querySelector('.parallax-bg');
+		let ticking = false;
+		let lastScrolled = 0;
+		
+		const handleScroll = () => {
+			const scrolled = window.pageYOffset;
+			const bannerTop = parallaxBanner.offsetTop;
+			const bannerHeight = parallaxBanner.offsetHeight;
+			
+			// Calcula si el banner está visible en el viewport
+			if (scrolled + window.innerHeight > bannerTop && scrolled < bannerTop + bannerHeight) {
+				const offset = (scrolled - bannerTop) * 0.5; // Factor de velocidad del parallax
+				if (parallaxBg instanceof HTMLElement) {
+					parallaxBg.style.transform = `translateY(${offset}px)`;
+				}
+			}
+		};
+
+		const requestTick = () => {
+			if (!ticking) {
+				requestAnimationFrame(handleScroll);
+				ticking = true;
+				setTimeout(() => { ticking = false; }, 16); // ~60fps
+			}
+		};
+		
+		window.addEventListener('scroll', requestTick, { passive: true });
+		handleScroll(); // Ejecutar una vez al cargar
     }
 
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-15px);
-        }
-    }
-
-    .animate-fade-in {
-        animation: fade-in 1s ease-out;
-    }
-
-    .animate-float {
-        animation: float 3s ease-in-out infinite;
-    }
-
-    .animate-spin-slow {
-        animation: spin 3s linear infinite;
-    }
-
-    @keyframes spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-</style>
+</script>
