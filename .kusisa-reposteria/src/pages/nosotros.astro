@@ -9,7 +9,7 @@ import Footer from '../components/footer.astro';
 
 	<main>
 		<div class="relative w-full h-screen">
-			<img src="/img/nosotros.png" alt="Equipo de Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover">
+			<img src="/img/nosotros2.png" alt="Equipo de Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover">
 			<div class="absolute inset-0 bg-gradient-to-b from-black/55 to-black/25"></div>
 
 			<div class="relative z-10 flex flex-col justify-center items-center text-center h-full px-6 sm:px-10 md:px-14 py-12 gap-6 text-white">
@@ -20,18 +20,21 @@ import Footer from '../components/footer.astro';
 			</div>
 		</div>
 
-		<section class="mt-30 flex flex-none">
-			<img src="/img/galletas-sn.jpg" alt="" class="h-150 pl-30">
+		<section class="mt-12 md:mt-30 flex flex-col md:flex-row gap-6 md:gap-0">
+			<img src="/img/galletas-sn.jpg" alt="" class="h-64 sm:h-96 md:h-150 w-full md:w-auto object-cover md:pl-30 flex-shrink-0">
 			
-			<div class="ml-30">
-				<blockquote class="text-7xl font-serif italic leading-relaxed">
+			<div class="px-6 sm:px-10 md:ml-30 md:px-0">
+				<blockquote class="text-4xl sm:text-5xl md:text-7xl font-serif italic leading-relaxed">
 					Raíces y tradición
 				</blockquote>
 
-				<blockquote class="text-2xl font-serif italic leading-relaxed mt-10">
-					Todo comenzó en una pequeña cocina de techos altos, donde el sonido de <br> los batidores era la bande sonora de nuestras <br> <br> <br>
-					Insipiradas por las recetas familiares que cruzaron océanos, decidimos <br> fundar Kusisa Reposteria como un refugio para los sabores honestos. <br> No buscamos
-					la perfección industrial, sino la calidez de lo hecho a mano, <br> donde cada irregularidad cuenta una historia diferente
+				<blockquote class="text-lg sm:text-xl md:text-2xl font-serif italic leading-relaxed mt-6 md:mt-10 space-y-4">
+					<p>Todo comenzó en una pequeña cocina de techos altos, donde el sonido <br> de los batidores era la banda sonora de nuestras 
+					<span class="block md:inline">creaciones.</span></p>
+					
+					<p class="pt-4">Inspiradas por las recetas familiares que cruzaron océanos, decidimos <br class="hidden md:inline">
+					<span class="block md:inline">fundar Kusisa Reposteria como un refugio para los sabores honestos.</span> <br> No buscamos la perfección industrial, sino la calidez de lo hecho a mano, <br class="hidden md:inline">
+					<span class="block md:inline">donde cada irregularidad cuenta una historia diferente</span></p>
 				</blockquote>
 			</div>
 		</section>
@@ -47,23 +50,40 @@ import Footer from '../components/footer.astro';
 			</div>
 		</section>
 
-		<section class="mt-30 flex flex-none ml-40">
+		<section class="mt-12 md:mt-30 flex flex-col-reverse md:flex-row md:ml-40 gap-6 md:gap-0">
 			
-			<div class="mr-30">
-				<blockquote class="text-7xl font-serif italic leading-relaxed">
+			<div class="px-6 sm:px-10 md:mr-30 md:px-0">
+				<blockquote class="text-4xl sm:text-5xl md:text-7xl font-serif italic leading-relaxed">
 					Materia Prima
 				</blockquote>
 
-				<blockquote class="text-2xl font-serif italic leading-relaxed mt-10">
-					Todo comenzó en una pequeña cocina de techos altos, donde el sonido de <br> los batidores era la bande sonora de nuestras <br> <br> <br>
-					Insipiradas por las recetas familiares que cruzaron océanos, decidimos <br> fundar Kusisa Reposteria como un refugio para los sabores honestos. <br> No buscamos
-					la perfección industrial, sino la calidez de lo hecho a mano, <br> donde cada irregularidad cuenta una historia diferente
+				<blockquote class="text-lg sm:text-xl md:text-2xl font-serif italic leading-relaxed mt-6 md:mt-10 space-y-4">
+					<p>La alquimia de transformar ingredientes simples en experiencias <br class="hidden md:inline">
+					<span class="block md:inline">memorables.</span></p>
+					
+					<p class="pt-4">Trabajamos con productores locales para asegurar que nuestra mantequilla <br class="hidden md:inline">
+					<span class="block md:inline">sea siempre fresca y nuestro chocolate tenga el origen más puro.</span> En nuestro taller, la tecnología solo entra para mejorar la precisión, <br class="hidden md:inline">
+					<span class="block md:inline">nunca para sustituir el toque humano que define nuestra repostería.</span></p>
 				</blockquote>
 			</div>
 
-			<img src="/img/alfajores.jpeg" alt="" class="h-160 pr-30 w-170">
+			<img src="/img/alfajores.jpeg" alt="" class="h-64 sm:h-96 md:h-160 w-full md:w-170 object-cover md:pr-30 flex-shrink-0">
+		</section>
+
+		<section class="relative w-full h-96 md:h-[500px] mt-12 md:mt-20">
+			<img src="/img/nosotros3.png" alt="Contacto Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover">
+			<div class="absolute inset-0 bg-black/30"></div>
+			
+			<div class="relative z-10 flex flex-col justify-center items-center h-full gap-6 px-6">
+				<p class="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white">Contáctanos</p>
+				<a href="/contacto" class="px-8 py-3 border-2 border-white text-white font-medium uppercase tracking-wider hover:bg-white hover:text-gray-900 transition-all duration-300">
+					Escribenos
+				</a>
+			</div>
 		</section>
 	</main>
 
 	<Footer />
 </Layout>
+
+

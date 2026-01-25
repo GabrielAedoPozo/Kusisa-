@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+---
+
+
+<Layout>
+    
+    <Header />
+
+    <main>
+		<div class="relative w-full h-screen">
+			<img src="/img/cupcakeP.avif" alt="Contacto Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover">
+			<div class="absolute inset-0 bg-gradient-to-b from-black/55 to-black/25"></div>
+
+			<div class="relative z-10 flex flex-col justify-center items-center text-center h-full px-6 sm:px-10 md:px-14 py-12 gap-6 text-white">
+				<p class="text-lg sm:text-xl font-medium">Estamos para ti</p>
+				<blockquote class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-serif italic leading-relaxed text-center">
+					Contáctanos
+				</blockquote>
+			</div>
+		</div>
+
+		<section class="mt-12 md:mt-30 px-6 sm:px-10 md:px-20 lg:px-40 py-16 bg-white">
+			<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+				
+				<!-- Columna izquierda: Información -->
+				<div class="space-y-10">
+					<div>
+						<blockquote class="text-4xl sm:text-5xl md:text-6xl font-serif italic leading-relaxed text-black mb-8">
+							¿Hablamos?
+						</blockquote>
+						<p class="text-lg sm:text-xl md:text-2xl font-serif italic leading-relaxed text-black">
+							Nos encanta escuchar tus ideas, responder tus dudas y preparar algo especial para ti.
+						</p>
+					</div>
+
+					<div class="space-y-6">
+						<div>
+							<h3 class="text-xl font-semibold text-black mb-2">Email</h3>
+							<a href="mailto:hola@kusisareposteria.com" class="text-lg text-black hover:underline">
+								kusisareposteria@gmail.com
+							</a>
+						</div>
+
+						<div>
+							<h3 class="text-xl font-semibold text-black mb-2">Teléfono</h3>
+							<a href="tel:+34123456789" class="text-lg text-black hover:underline">
+								+51 946 126 449
+							</a>
+						</div>
+
+
+						<div>
+							<h3 class="text-xl font-semibold text-black mb-2">Redes Sociales</h3>
+							<div class="flex gap-4">
+								<a href="https://www.instagram.com/kusisa_reposteria/" class="text-lg text-black hover:underline">Instagram</a>
+								<a href="https://www.facebook.com/kusisa_reposteria/" class="text-lg text-black hover:underline">Facebook</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Columna derecha: Formulario -->
+				<div class="bg-white p-8 sm:p-10 border border-black rounded-lg">
+					<form class="space-y-6">
+						<div>
+							<label for="nombre" class="block text-sm font-semibold text-black mb-2">Nombre</label>
+							<input 
+								type="text" 
+								id="nombre" 
+								name="nombre" 
+								required
+								class="w-full px-4 py-3 border border-black bg-white text-black outline-none focus:ring-0 rounded-md"
+							>
+						</div>
+
+						<div>
+							<label for="email" class="block text-sm font-semibold text-black mb-2">Email</label>
+							<input 
+								type="email" 
+								id="email" 
+								name="email" 
+								required
+								class="w-full px-4 py-3 border border-black bg-white text-black outline-none focus:ring-0 rounded-md"
+							>
+						</div>
+
+						<div>
+							<label for="telefono" class="block text-sm font-semibold text-black mb-2">Teléfono</label>
+							<input 
+								type="tel" 
+								id="telefono" 
+								name="telefono"
+								class="w-full px-4 py-3 border border-black bg-white text-black outline-none focus:ring-0 rounded-md"
+							>
+						</div>
+
+						<div>
+							<label for="mensaje" class="block text-sm font-semibold text-black mb-2">Mensaje</label>
+							<textarea 
+								id="mensaje" 
+								name="mensaje" 
+								rows="5"
+								required
+								class="w-full px-4 py-3 border border-black bg-white text-black outline-none focus:ring-0 resize-none rounded-md"
+							></textarea>
+						</div>
+
+						<button 
+							type="submit"
+							class="w-full py-4 bg-black text-white font-semibold uppercase tracking-wider hover:bg-white hover:text-black border-2 border-black transition-colors duration-300 rounded-md"
+						>
+							Enviar Mensaje
+						</button>
+					</form>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="mt-24 px-6 sm:px-10 md:px-14 flex flex-col items-center text-center gap-6 py-16 bg-white">
+			<div class="text-4xl text-black">&ldquo;&rdquo;</div>
+			<blockquote class="max-w-5xl text-3xl sm:text-4xl md:text-5xl font-serif italic leading-relaxed text-black">
+				Cada pedido es una oportunidad para crear algo único. Cuéntanos tu historia y la convertiremos en dulzura.
+			</blockquote>
+		</section>
+	</main>
+
+    <Footer />
+
+</Layout>
