@@ -169,19 +169,12 @@ Frontend Developer
 
 ## 📄 Licencia
 
-© 2024 Kusisa Repostería. Todos los derechos reservados.
+© 2026 Kusisa Repostería. Todos los derechos reservados.
 
 Este proyecto es de uso privado y comercial exclusivo para Kusisa Repostería.
 
 ---
 
-## 📞 Soporte
-
-Para consultas sobre el proyecto:
-- 📧 Email: [tu-email@ejemplo.com]
-- 💼 LinkedIn: [Tu perfil]
-
----
 
 <div align="center">
 
