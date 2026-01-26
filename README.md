@@ -1,46 +1,91 @@
-# Astro Starter Kit: Basics
+# Kusisa Repostería
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Sitio web oficial de **Kusisa Repostería**, enfocado en la presentación de postres artesanales y personalizados, con un diseño elegante, moderno y optimizado para alto rendimiento.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El proyecto está construido con tecnologías modernas del ecosistema frontend.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tecnologías
+
+- Astro
+- Tailwind CSS
+- JavaScript
+- HTML5
+- CSS3
+- pnpm
+- Git
+
+---
+
+## Estructura del proyecto
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│   └── img/
+├── src/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   └── styles/
+├── astro.config.mjs
+├── tailwind.config.mjs
+├── package.json
+└── pnpm-lock.yaml
+
+
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Instalación
+Clonar el repositorio:
 
-## 🧞 Commands
+git clone https://github.com/GabrielAedoPozo/Kusisa-
+cd Kusisa-
+Instalar dependencias:
 
-All commands are run from the root of the project, from a terminal:
+pnpm install
+Iniciar el servidor de desarrollo:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+pnpm dev
+El proyecto se ejecuta en:
 
-## 👀 Want to learn more?
+http://localhost:4321
+Build de producción
+Generar build:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+pnpm build
+Vista previa del build:
+
+pnpm preview
+Estilos
+El proyecto utiliza Tailwind CSS con una configuración personalizada para mantener una estética limpia, elegante y responsive, orientada a una marca de repostería premium.
+
+Despliegue
+Compatible con:
+
+Cloudflare Pages
+
+Vercel
+
+Netlify
+
+Hosting estático
+
+Astro genera archivos optimizados listos para producción.
+
+Autor
+Desarrollado por Gabriel Aedo
+Frontend Developer
+
+Licencia
+Proyecto de uso privado para Kusisa Repostería.
+Todos los derechos reservados.
+
+
+---
+
+Si quieres, te lo puedo:
+- reducir aún más (versión ultra minimal)
+- adaptar específicamente a **Cloudflare Pages**
+- o ajustar el texto a un tono más comercial o más técnico
