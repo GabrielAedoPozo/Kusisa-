@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+
+const productos = [
+  { id: 1, nombre: 'Cupcake Vainilla', categoria: 'clasicos', precio: 2.50 },
+  { id: 2, nombre: 'Cupcake Chocolate', categoria: 'clasicos', precio: 2.50 },
+  { id: 3, nombre: 'Cupcake Red Velvet', categoria: 'clasicos', precio: 3.00 },
+  { id: 4, nombre: 'Cupcake Fresa', categoria: 'clasicos', precio: 2.75 },
+  
+  { id: 5, nombre: 'Tiramisú', categoria: 'postres_frios', precio: 4.50 },
+  { id: 6, nombre: 'Cheesecake Frío', categoria: 'postres_frios', precio: 4.75 },
+  { id: 7, nombre: 'Pavlova', categoria: 'postres_frios', precio: 3.50 },
+  { id: 8, nombre: 'Mousse de Chocolate', categoria: 'postres_frios', precio: 4.00 },
+  
+  { id: 9, nombre: 'Brownie Bite', categoria: 'bocaditos', precio: 1.50 },
+  { id: 10, nombre: 'Cookie de Almendra', categoria: 'bocaditos', precio: 1.75 },
+  { id: 11, nombre: 'Mini Tarta', categoria: 'bocaditos', precio: 2.00 },
+  { id: 12, nombre: 'Bombón de Frutas', categoria: 'bocaditos', precio: 1.25 },
+  
+  { id: 13, nombre: 'Cupcake Personalizado (6)', categoria: 'personalizados', precio: 15.00 },
+  { id: 14, nombre: 'Cupcake Personalizado (12)', categoria: 'personalizados', precio: 28.00 },
+  { id: 15, nombre: 'Pastel Temático', categoria: 'personalizados', precio: 35.00 },
+];
+
+const categorias = [
+  { id: 'todos', nombre: 'Todos' },
+  { id: 'clasicos', nombre: 'Clásicos' },
+  { id: 'postres_frios', nombre: 'Postres Fríos' },
+  { id: 'bocaditos', nombre: 'Bocaditos' },
+  { id: 'personalizados', nombre: 'Personalizados' },
+];
+---
+
+<Layout>
+    <Header />
+
+    <main class="menu-container">
+        <section class="menu-section">
+            <h1>Nuestro Menú</h1>
+            
+            <!-- Filtros -->
+            <div class="filtros">
+                {categorias.map((cat) => (
+                    <button 
+                        class={`btn-filtro ${cat.id === 'todos' ? 'activo' : ''}`}
+                        data-filtro={cat.id}
+                    >
+                        {cat.nombre}
+                    </button>
+                ))}
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="productos-grid">
+                {productos.map((producto) => (
+                    <div class="producto-card" data-categoria={producto.categoria}>
+                        <div class="producto-imagen">
+                            <div class="imagen-placeholder">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="200" height="200" fill="#f0e6d2"/>
+                                    <circle cx="100" cy="85" r="45" fill="#d4a574"/>
+                                    <circle cx="75" cy="60" r="8" fill="#fff"/>
+                                    <circle cx="125" cy="50" r="8" fill="#fff"/>
+                                    <ellipse cx="100" cy="110" rx="50" ry="20" fill="#e8d4c0"/>
+                                    <text x="100" y="160" font-size="14" text-anchor="middle" fill="#999" font-family="Arial">
+                                        Foto
+                                    </text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="producto-info">
+                            <h3>{producto.nombre}</h3>
+                            <p class="precio">${producto.precio.toFixed(2)}</p>
+                            <button class="btn-agregar">Agregar</button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .menu-container {
+        min-height: calc(100vh - 300px);
+        background: #ffffff;
+        padding: 40px 20px;
+    }
+
+    .menu-section {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .menu-section h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #000000;
+        margin-bottom: 40px;
+        font-family: 'Georgia', serif;
+        text-shadow: none;
+    }
+
+    /* Filtros */
+    .filtros {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .btn-filtro {
+        padding: 10px 20px;
+        border: 2px solid #000000;
+        background: white;
+        color: #000000;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .btn-filtro:hover {
+        background: #f5f5f5;
+        transform: translateY(-2px);
+    }
+
+    .btn-filtro.activo {
+        background: #000000;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Grid de Productos */
+    .productos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .producto-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .producto-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        border-color: #000000;
+    }
+
+    .producto-card.oculto {
+        display: none;
+    }
+
+    .producto-imagen {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .imagen-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imagen-placeholder svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .producto-info {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .producto-info h3 {
+        font-size: 1.3rem;
+        color: #000000;
+        margin-bottom: 8px;
+        font-family: 'Georgia', serif;
+    }
+
+    .precio {
+        font-size: 1.8rem;
+        color: #000000;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .btn-agregar {
+        width: 100%;
+        padding: 12px;
+        background: #000000;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-agregar:hover {
+        background: #333333;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .menu-section h1 {
+            font-size: 2rem;
+        }
+
+        .productos-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .filtros {
+            gap: 8px;
+        }
+
+        .btn-filtro {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.btn-filtro').forEach((botton) => {
+        botton.addEventListener('click', function() {
+            const filtroSeleccionado = this.dataset.filtro;
+
+            // Actualizar botón activo
+            document.querySelectorAll('.btn-filtro').forEach((btn) => {
+                btn.classList.remove('activo');
+            });
+            this.classList.add('activo');
+
+            // Filtrar productos
+            document.querySelectorAll('.producto-card').forEach((card) => {
+                if (filtroSeleccionado === 'todos') {
+                    card.classList.remove('oculto');
+                } else if (card.dataset.categoria === filtroSeleccionado) {
+                    card.classList.remove('oculto');
+                } else {
+                    card.classList.add('oculto');
+                }
+            });
+        });
+    });
+</script>

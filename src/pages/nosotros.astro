@@ -20,55 +20,63 @@ import Footer from '../components/footer.astro';
 			</div>
 		</div>
 
-		<section class="mt-12 md:mt-30 flex flex-col md:flex-row gap-6 md:gap-0">
-			<img src="/img/torta-blanca.jpg" alt="" class="hidden md:block md:h-150 md:w-auto object-cover md:pl-30 flex-shrink-0 rounded-lg">
-			
-			<div class="px-6 sm:px-10 md:ml-30 md:px-0">
-				<blockquote class="text-4xl sm:text-5xl md:text-7xl font-serif italic leading-relaxed text-center">
+		<section class="mt-16 md:mt-28">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6">
+
+				<img 
+				src="/img/torta-blanca.jpg"
+				alt="Torta artesanal"
+				class="w-full h-[420px] md:h-[520px] object-cover rounded-lg"
+				/>
+
+				<div>
+					<blockquote class="text-4xl sm:text-5xl md:text-6xl font-serif italic text-center md:text-left">
 					Raíces y tradición
-				</blockquote>
+					</blockquote>
 
-				<blockquote class="text-lg sm:text-xl md:text-2xl font-serif italic leading-relaxed mt-6 md:mt-10 space-y-4 text-center">
-					<p>Todo comenzó en una pequeña cocina de techos altos, donde el sonido <br> de los batidores era la banda sonora de nuestras 
-					<span class="block md:inline">creaciones.</span></p>
-					
-					<p class="pt-4">Inspiradas por las recetas familiares que cruzaron océanos, decidimos <br class="hidden md:inline">
-					<span class="block md:inline">fundar Kusisa Reposteria como un refugio para los sabores honestos.</span> <br> No buscamos la perfección industrial, sino la calidez de lo hecho a mano, <br class="hidden md:inline">
-					<span class="block md:inline">donde cada irregularidad cuenta una historia diferente</span></p>
-				</blockquote>
+					<div class="mt-8 space-y-6 text-lg sm:text-xl md:text-2xl font-serif italic text-center md:text-left leading-relaxed">
+						<p>
+						Todo comenzó en una pequeña cocina de techos altos, donde el sonido de los batidores era la banda sonora de nuestras creaciones.
+						</p>
+
+						<p>
+						Inspiradas por recetas familiares que cruzaron océanos, fundamos Kusisa Repostería como un refugio para los sabores honestos. No buscamos la perfección industrial, sino la calidez de lo hecho a mano, donde cada irregularidad cuenta una historia.
+						</p>
+					</div>
+				</div>
+
 			</div>
 		</section>
 
-		<section class="mt-24 px-6 sm:px-10 md:px-14 flex flex-col items-center text-center gap-6 py-16 bg-[#fdfaf6]">
-			<div class="text-4xl text-[#e3b87e]">&ldquo;&rdquo;</div>
-			<blockquote class="max-w-5xl text-3xl sm:text-4xl md:text-5xl font-serif italic leading-relaxed text-gray-900">
-				Seleccionamos cada grano de cacao y cada pizca de harina con rigor. La calidad no es negociable, es nuestro lenguaje.
-			</blockquote>
-			<div class="flex items-center gap-4 text-gray-900 uppercase tracking-[0.2em] text-sm font-semibold">
-				<span class="w-12 h-px bg-[#e3b87e] inline-block"></span>
-				<span>Zaida</span>
+
+		<section class="mt-16 md:mt-28">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6">
+
+				<div>
+					<blockquote class="text-4xl sm:text-5xl md:text-6xl font-serif italic text-center md:text-left">
+						Materia prima
+					</blockquote>
+
+					<div class="mt-8 space-y-6 text-lg sm:text-xl md:text-2xl font-serif italic text-center md:text-left leading-relaxed">
+						<p>
+						La alquimia de transformar ingredientes simples en experiencias memorables.
+						</p>
+
+						<p>
+						Trabajamos con productores locales para asegurar mantequilla fresca y chocolate de origen puro. La tecnología entra solo para mejorar la precisión, nunca para sustituir el toque humano que define nuestra repostería.
+						</p>
+					</div>
+				</div>
+
+				<img 
+				src="/img/alfajores.jpeg"
+				alt="Alfajores artesanales"
+				class="w-full h-[420px] md:h-[520px] object-cover rounded-lg"
+				/>
+
 			</div>
 		</section>
 
-		<section class="mt-12 md:mt-30 flex flex-col-reverse md:flex-row md:ml-40 gap-6 md:gap-0">
-			
-			<div class="px-6 sm:px-10 md:mr-30 md:px-0">
-				<blockquote class="text-4xl sm:text-5xl md:text-7xl font-serif italic leading-relaxed text-center">
-					Materia Prima
-				</blockquote>
-
-				<blockquote class="text-lg sm:text-xl md:text-2xl font-serif italic leading-relaxed mt-6 md:mt-10 space-y-4 text-center">
-					<p>La alquimia de transformar ingredientes simples en experiencias <br class="hidden md:inline">
-					<span class="block md:inline">memorables.</span></p>
-					
-					<p class="pt-4">Trabajamos con productores locales para asegurar que nuestra mantequilla <br class="hidden md:inline">
-					<span class="block md:inline">sea siempre fresca y nuestro chocolate tenga el origen más puro.</span> En nuestro taller, la tecnología solo entra para mejorar la precisión, <br class="hidden md:inline">
-					<span class="block md:inline">nunca para sustituir el toque humano que define nuestra repostería.</span></p>
-				</blockquote>
-			</div>
-
-			<img src="/img/alfajores.jpeg" alt="" class="h-64 sm:h-96 md:h-160 w-full md:w-170 object-cover md:pr-30 flex-shrink-0 rounded-lg">
-		</section>
 
 		<section class="relative w-full h-96 md:h-[500px] mt-12 md:mt-20">
 			<img src="/img/nosotros3.png" alt="Contacto Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover rounded-lg">
