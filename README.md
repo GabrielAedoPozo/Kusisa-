@@ -1,46 +1,185 @@
-# Astro Starter Kit: Basics
+# 🍰 Kusisa Repostería
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Sitio web oficial de **Kusisa Repostería** — una experiencia digital que refleja la elegancia y calidad de nuestros postres artesanales y personalizados.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Diseñado con enfoque en performance, accesibilidad y una estética moderna que transmite la esencia premium de la marca.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Características
 
+- 🚀 **Rendimiento optimizado** con Astro y generación estática
+- 🎨 **Diseño responsive** y elegante con Tailwind CSS
+- ⚡ **Carga ultrarrápida** mediante optimización de assets
+- 📱 **Mobile-first** para una experiencia perfecta en cualquier dispositivo
+- 🎯 **SEO optimizado** para mejor visibilidad en buscadores
+- ♿ **Accesible** siguiendo estándares WCAG
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Tecnología | Propósito |
+|------------|-----------|
+| **Astro** | Framework principal (SSG) |
+| **Tailwind CSS** | Estilos y diseño responsive |
+| **JavaScript** | Interactividad del sitio |
+| **pnpm** | Gestor de paquetes rápido |
+| **Git** | Control de versiones |
+
+---
+
+## 📁 Estructura del Proyecto
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+kusisa-reposteria/
+│
+├── public/              # Assets estáticos
+│   └── img/            # Imágenes optimizadas
+│
+├── src/
+│   ├── components/     # Componentes reutilizables
+│   ├── layouts/        # Plantillas de página
+│   ├── pages/          # Rutas del sitio
+│   └── styles/         # Estilos globales
+│
+├── astro.config.mjs    # Configuración de Astro
+├── tailwind.config.mjs # Configuración de Tailwind
+├── package.json        # Dependencias del proyecto
+└── pnpm-lock.yaml      # Lock file de pnpm
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🚀 Inicio Rápido
 
-All commands are run from the root of the project, from a terminal:
+### Prerrequisitos
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+- Node.js 18+ 
+- pnpm instalado globalmente
 
-## 👀 Want to learn more?
+### Instalación
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**1. Clonar el repositorio**
+```bash
+git clone https://github.com/GabrielAedoPozo/Kusisa-.git
+cd Kusisa-
+```
+
+**2. Instalar dependencias**
+```bash
+pnpm install
+```
+
+**3. Iniciar servidor de desarrollo**
+```bash
+pnpm dev
+```
+
+El sitio estará disponible en: **http://localhost:4321**
+
+---
+
+## 📦 Scripts Disponibles
+
+| Comando | Descripción |
+|---------|-------------|
+| `pnpm dev` | Inicia el servidor de desarrollo |
+| `pnpm build` | Genera build de producción |
+| `pnpm preview` | Vista previa del build localmente |
+| `pnpm astro` | Comandos CLI de Astro |
+
+---
+
+## 🎨 Personalización de Estilos
+
+El proyecto utiliza **Tailwind CSS** con una configuración personalizada en `tailwind.config.mjs` que incluye:
+
+- Paleta de colores acorde a la identidad de marca
+- Tipografías elegantes y legibles
+- Espaciados consistentes
+- Breakpoints responsive optimizados
+- Componentes custom para elementos recurrentes
+
+---
+
+## 🌐 Despliegue
+
+El sitio está optimizado para despliegue en plataformas modernas:
+
+### Recomendado: Cloudflare Pages
+```bash
+pnpm build
+```
+
+Configuración en Cloudflare Pages:
+- **Build command:** `pnpm build`
+- **Build output directory:** `dist`
+
+### Alternativas compatibles:
+
+- ✅ Vercel
+- ✅ Netlify
+- ✅ GitHub Pages
+- ✅ Cualquier hosting de archivos estáticos
+
+Astro genera un output completamente estático y optimizado, listo para producción.
+
+---
+
+## 🔧 Configuración Adicional
+
+### Variables de Entorno (opcional)
+
+Crea un archivo `.env` en la raíz si necesitas variables:
+```env
+PUBLIC_SITE_URL=https://kusisareposteria.com
+PUBLIC_CONTACT_EMAIL=contacto@kusisareposteria.com
+```
+
+---
+
+## 📈 Optimizaciones Implementadas
+
+- ✅ Imágenes lazy-loading y formato WebP
+- ✅ Minificación de CSS y JavaScript
+- ✅ Prefetching de rutas críticas
+- ✅ Cache headers optimizados
+- ✅ Compresión Brotli/Gzip
+- ✅ Critical CSS inline
+
+---
+
+## 🤝 Contribuciones
+
+Este es un proyecto privado para **Kusisa Repostería**. 
+
+Para sugerencias o reportes, contacta directamente al desarrollador.
+
+---
+
+## 👨‍💻 Autor
+
+**Gabriel Aedo**  
+Frontend Developer
+
+- GitHub: [@GabrielAedoPozo](https://github.com/GabrielAedoPozo)
+- Portfolio: [tu-portfolio.com](#)
+
+---
+
+## 📄 Licencia
+
+© 2026 Kusisa Repostería. Todos los derechos reservados.
+
+Este proyecto es de uso privado y comercial exclusivo para Kusisa Repostería.
+
+---
+
+
+<div align="center">
+
+**Hecho con ❤️ y mucho ☕ para Kusisa Repostería**
+
+⭐ Si te gusta el proyecto, dale una estrella en GitHub
+
+</div>
