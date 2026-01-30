@@ -4,10 +4,15 @@ import Hero from '../components/hero.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
 
-
+const seoProps = {
+	title: 'Kusisa Repostería | Cupcakes y Pasteles Artesanales Perú',
+	description: 'Kusisa Repostería: descubre nuestros deliciosos cupcakes, pasteles personalizados y postres artesanales hechos a mano en Lima, Perú. Sabores honestos con ingredientes locales.',
+	image: '/img/kusisa-og.png',
+	ogType: 'website'
+};
 ---
 
-<Layout>
+<Layout {...seoProps}>
 
 	<Header />
 	<Hero />

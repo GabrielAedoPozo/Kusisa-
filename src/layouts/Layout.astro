@@ -5,22 +5,108 @@ import '@fontsource/onest/500.css';
 import '@fontsource/onest/600.css';
 import '@fontsource/onest/700.css';
 
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	canonical?: string;
+	ogType?: string;
+}
+
+const {
+	title = 'Kusisa Repostería | Postres Artesanales Perú',
+	description = 'Kusisa Repostería: cupcakes, pasteles personalizados y postres artesanales hechos a mano en Perú. Sabores honestos, ingredientes locales de calidad.',
+	image = '/img/kusisa-og.png',
+	canonical = Astro.url.pathname,
+	ogType = 'website'
+} = Astro.props;
+
+const siteUrl = 'https://kusisareposteria.com';
+const fullCanonical = new URL(canonical, siteUrl).toString();
+const fullImage = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
+		<!-- Metadatos esenciales -->
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/img/kusisa-cir.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Kusisa Repostería | Inicio</title>
+		
+		<!-- SEO Básico -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={fullCanonical} />
+		
+		<!-- Favicons -->
+		<link rel="icon" href="/img/kusisa-cir.png" />
+		<link rel="apple-touch-icon" href="/img/kusisa-cir.png" />
+		
+		<!-- Open Graph para redes sociales -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={fullImage} />
+		<meta property="og:url" content={fullCanonical} />
+		<meta property="og:site_name" content="Kusisa Repostería" />
+		<meta property="og:locale" content="es_PE" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={fullImage} />
+		
+		<!-- Keywords para SEO -->
+		<meta name="keywords" content="repostería artesanal, cupcakes Perú, pasteles personalizados, postres Lima, dulces artesanales, tortas, desserts" />
+		
+		<!-- Información de contacto para motor de búsqueda -->
+		<meta name="author" content="Kusisa Repostería" />
+		<meta name="copyright" content="2022 - Kusisa Repostería" />
+		<meta name="theme-color" content="#fff" />
+		
+		<!-- Preconexión a recursos externos -->
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		
+		<!-- Stylesheet de Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+		
+		<!-- Schema.org JSON-LD para SEO estructurado -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Kusisa Repostería",
+			"image": fullImage,
+			"description": "Repostería artesanal con cupcakes, pasteles personalizados y postres hechos a mano",
+			"url": siteUrl,
+			"telephone": "+51946126449",
+			"email": "kusisareposteria@gmail.com",
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "PE",
+				"addressRegion": "Lima"
+			},
+			"sameAs": [
+				"https://www.instagram.com/kusisa_reposteria/",
+				"https://www.facebook.com/kusisa_reposteria/"
+			],
+			"priceRange": "$$",
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+					"opens": "09:00",
+					"closes": "19:00"
+				}
+			]
+		})}></script>
 	</head>
 	<body>
 		<slot />
 		
-		<!-- Boton de Whatsapp -->
+
 		<a href="https://wa.me/51946126449?text=Hola%2C%20estoy%20interesado%20en%3A" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="whatsapp-button">
 			<i class="fab fa-whatsapp"></i>
 		</a>

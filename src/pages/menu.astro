@@ -3,6 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
 
+const seoProps = {
+	title: 'Menú | Kusisa Repostería - Cupcakes, Postres y Pasteles Personalizados',
+	description: 'Explora nuestro menú completo: cupcakes clásicos, postres fríos, bocaditos artesanales y pasteles personalizados. Precios desde $1.25. Pedidos en línea.',
+	image: '/img/cupcakeP.avif',
+	ogType: 'website'
+};
+
 const productos = [
   { id: 1, nombre: 'Cupcake Vainilla', categoria: 'clasicos', precio: 2.50 },
   { id: 2, nombre: 'Cupcake Chocolate', categoria: 'clasicos', precio: 2.50 },
@@ -33,7 +40,7 @@ const categorias = [
 ];
 ---
 
-<Layout>
+<Layout {...seoProps}>
     <Header />
 
     <main class="menu-container">

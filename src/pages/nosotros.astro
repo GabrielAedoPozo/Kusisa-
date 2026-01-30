@@ -2,14 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+
+const seoProps = {
+	title: 'Nosotros | Kusisa Repostería - Historia de Pasión y Tradición',
+	description: 'Conoce la historia de Kusisa Repostería: desde 2022 creando postres artesanales con ingredientes locales y recetas familiares. Repostería hecha con el corazón.',
+	image: '/img/nosotros2.png',
+	ogType: 'website'
+};
 ---
 
-<Layout>
+<Layout {...seoProps}>
 	<Header />
 
 	<main>
 		<div class="relative w-full h-screen">
-			<img src="/img/nosotros2.png" alt="Equipo de Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+			<img src="/img/nosotros2.png" alt="Equipo de Kusisa Repostería - Repostería artesanal desde 2022" class="absolute inset-0 w-full h-full object-cover rounded-lg">
 			<div class="absolute inset-0 bg-gradient-to-b from-black/55 to-black/25"></div>
 
 			<div class="relative z-10 flex flex-col justify-center items-center text-center h-full px-6 sm:px-10 md:px-14 py-12 gap-6 text-white">
@@ -25,7 +32,7 @@ import Footer from '../components/footer.astro';
 
 				<img 
 				src="/img/torta-blanca.jpg"
-				alt="Torta artesanal"
+				alt="Torta blanca artesanal hecha en Kusisa Repostería"
 				class="w-full h-[420px] md:h-[520px] object-cover rounded-lg"
 				/>
 
@@ -70,7 +77,7 @@ import Footer from '../components/footer.astro';
 
 				<img 
 				src="/img/alfajores.jpeg"
-				alt="Alfajores artesanales"
+				alt="Alfajores artesanales de Kusisa Repostería - dulces tradicionales"
 				class="w-full h-[420px] md:h-[520px] object-cover rounded-lg"
 				/>
 
@@ -79,7 +86,7 @@ import Footer from '../components/footer.astro';
 
 
 		<section class="relative w-full h-96 md:h-[500px] mt-12 md:mt-20">
-			<img src="/img/nosotros3.png" alt="Contacto Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+			<img src="/img/nosotros3.png" alt="Equipo de Kusisa Repostería listo para atenderte - contacto" class="absolute inset-0 w-full h-full object-cover rounded-lg">
 			<div class="absolute inset-0 bg-black/30"></div>
 			
 			<div class="relative z-10 flex flex-col justify-center items-center h-full gap-6 px-6">

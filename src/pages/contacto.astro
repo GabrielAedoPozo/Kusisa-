@@ -2,16 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+
+const seoProps = {
+	title: 'Contacto | Kusisa Repostería - Comunícate con Nosotros',
+	description: 'Contáctanos en Kusisa Repostería. Teléfono: +51 946 126 449 | Email: kusisareposteria@gmail.com | Instagram y Facebook. Estamos para atenderte.',
+	image: '/img/kusisa-og.png',
+	ogType: 'website'
+};
 ---
 
 
-<Layout>
+<Layout {...seoProps}>
     
     <Header />
 
     <main>
 		<div class="relative w-full h-screen">
-			<img src="/contacto.png" alt="Contacto Kusisa Repostería" class="absolute inset-0 w-full h-full object-cover">
+			<img src="/contacto.png" alt="Contacto Kusisa Repostería - Comunícate con nosotros por teléfono, email o WhatsApp" class="absolute inset-0 w-full h-full object-cover">
 			<div class="absolute inset-0 bg-gradient-to-b from-black/55 to-black/25"></div>
 
 			<div class="relative z-10 flex flex-col justify-center items-center text-center h-full px-6 sm:px-10 md:px-14 py-12 gap-6 text-white">
