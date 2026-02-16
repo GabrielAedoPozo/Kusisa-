@@ -26,9 +26,23 @@ const productos = [
   { id: 11, nombre: 'Mini Tarta', categoria: 'bocaditos', precio: 2.00 },
   { id: 12, nombre: 'Bombón de Frutas', categoria: 'bocaditos', precio: 1.25 },
   
-  { id: 13, nombre: 'Cupcake Personalizado (6)', categoria: 'personalizados', precio: 15.00 },
-  { id: 14, nombre: 'Cupcake Personalizado (12)', categoria: 'personalizados', precio: 28.00 },
-  { id: 15, nombre: 'Pastel Temático', categoria: 'personalizados', precio: 35.00 },
+
+  { id: 14, nombre: 'Cupcakes Temáticos', categoria: 'personalizados', imagen: '/img/personalizado1.jpeg' },
+  { id: 15, nombre: 'Torta de Celebración', categoria: 'personalizados', imagen: '/img/personalizado2.jpeg' },
+  { id: 16, nombre: 'Diseño Especial', categoria: 'personalizados', imagen: '/img/personalizado3.jpeg' },
+  { id: 17, nombre: 'Pastel de Boda', categoria: 'personalizados', imagen: '/img/personalizado4.jpeg' },
+  { id: 18, nombre: 'Torta Infantil', categoria: 'personalizados', imagen: '/img/personalizado5.jpeg' },
+  { id: 19, nombre: 'Diseño Único', categoria: 'personalizados', imagen: '/img/personalizado6.jpeg' },
+  { id: 20, nombre: 'Pastel Decorado', categoria: 'personalizados', imagen: '/img/personalizado7.jpeg' },
+  { id: 21, nombre: 'Torta Especial', categoria: 'personalizados', imagen: '/img/personalizado8.jpeg' },
+  { id: 22, nombre: 'Creación Personalizada', categoria: 'personalizados', imagen: '/img/personalizado9.jpeg' },
+  { id: 23, nombre: 'Pastel de Evento', categoria: 'personalizados', imagen: '/img/personalizado10.jpeg' },
+  { id: 24, nombre: 'Diseño Artístico', categoria: 'personalizados', imagen: '/img/personalizado12.jpeg' },
+  { id: 25, nombre: 'Torta Elegante', categoria: 'personalizados', imagen: '/img/personalizado13.jpeg' },
+  { id: 26, nombre: 'Pastel Gourmet', categoria: 'personalizados', imagen: '/img/personalizado14.jpg' },
+  { id: 27, nombre: 'Diseño Premium', categoria: 'personalizados', imagen: '/img/personalizado15.jpg' },
+  { id: 28, nombre: 'Torta Deluxe', categoria: 'personalizados', imagen: '/img/personalizado16.jpg' },
+  { id: 29, nombre: 'Creación Exclusiva', categoria: 'personalizados', imagen: '/img/personalizado17.jpg' },
 ];
 
 const categorias = [
@@ -62,31 +76,71 @@ const categorias = [
             <!-- Grid de Productos -->
             <div class="productos-grid">
                 {productos.map((producto) => (
-                    <div class="producto-card" data-categoria={producto.categoria}>
+                    <div class={`producto-card ${producto.imagen ? 'solo-imagen' : ''}`} data-categoria={producto.categoria}>
                         <div class="producto-imagen">
-                            <div class="imagen-placeholder">
-                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="200" height="200" fill="#f0e6d2"/>
-                                    <circle cx="100" cy="85" r="45" fill="#d4a574"/>
-                                    <circle cx="75" cy="60" r="8" fill="#fff"/>
-                                    <circle cx="125" cy="50" r="8" fill="#fff"/>
-                                    <ellipse cx="100" cy="110" rx="50" ry="20" fill="#e8d4c0"/>
-                                    <text x="100" y="160" font-size="14" text-anchor="middle" fill="#999" font-family="Arial">
-                                        Foto
-                                    </text>
-                                </svg>
+                            {producto.imagen ? (
+                                <img src={producto.imagen} alt={producto.nombre} />
+                            ) : (
+                                <div class="imagen-placeholder">
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="200" height="200" fill="#f0e6d2"/>
+                                        <circle cx="100" cy="85" r="45" fill="#d4a574"/>
+                                        <circle cx="75" cy="60" r="8" fill="#fff"/>
+                                        <circle cx="125" cy="50" r="8" fill="#fff"/>
+                                        <ellipse cx="100" cy="110" rx="50" ry="20" fill="#e8d4c0"/>
+                                        <text x="100" y="160" font-size="14" text-anchor="middle" fill="#999" font-family="Arial">
+                                            Foto
+                                        </text>
+                                    </svg>
+                                </div>
+                            )}
+                        </div>
+                        {!producto.imagen && (
+                            <div class="producto-info">
+                                <h3>{producto.nombre}</h3>
+                                {producto.precio && (
+                                    <>
+                                        <p class="precio">${producto.precio.toFixed(2)}</p>
+                                        <button class="btn-agregar">Agregar</button>
+                                    </>
+                                )}
                             </div>
-                        </div>
-                        <div class="producto-info">
-                            <h3>{producto.nombre}</h3>
-                            <p class="precio">${producto.precio.toFixed(2)}</p>
-                            <button class="btn-agregar">Agregar</button>
-                        </div>
+                        )}
                     </div>
                 ))}
             </div>
+
+            <!-- Mensaje de Contacto para Personalizados -->
+            <div class="contacto-personalizado" data-categoria="personalizados" style="display: none;">
+                <div class="contacto-card">
+                    <h2>¿Quieres el tuyo?</h2>
+                    <p>Los precios varían según el diseño, tamaño y detalles. ¡Contáctanos para cotizar tu pastel personalizado!</p>
+                    <a href="https://wa.me/593999999999?text=Hola%20Kusisa,%20quiero%20cotizar%20un%20pastel%20personalizado" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-whatsapp">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        Contáctanos por WhatsApp
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
+
+    <!-- Modal Lightbox -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <button class="lightbox-close" aria-label="Cerrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="" />
+        </div>
+    </div>
 
     <Footer />
 </Layout>
@@ -173,6 +227,23 @@ const categorias = [
         display: none;
     }
 
+    .producto-card.solo-imagen {
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .producto-card.solo-imagen .producto-imagen {
+        height: 350px;
+        border-bottom: none;
+    }
+
+    .producto-card.solo-imagen:hover {
+        transform: scale(1.05);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
     .producto-imagen {
         width: 100%;
         height: 250px;
@@ -196,6 +267,12 @@ const categorias = [
     .imagen-placeholder svg {
         width: 100%;
         height: 100%;
+    }
+
+    .producto-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .producto-info {
@@ -236,6 +313,140 @@ const categorias = [
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
+    /* Sección de Contacto Personalizado */
+    .contacto-personalizado {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contacto-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+        border-radius: 16px;
+        padding: 50px 40px;
+        text-align: center;
+        max-width: 600px;
+        border: 2px solid #000000;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .contacto-card h2 {
+        font-size: 2.5rem;
+        color: #000000;
+        margin-bottom: 20px;
+        font-family: 'Georgia', serif;
+    }
+
+    .contacto-card p {
+        font-size: 1.1rem;
+        color: #555555;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 32px;
+        background: #25D366;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+        background: #20BA5A;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-whatsapp svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.activo {
+        display: flex;
+        opacity: 1;
+    }
+
+    .lightbox-content {
+        max-width: 90vw;
+        max-height: 90vh;
+        position: relative;
+        animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .lightbox-content img {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        z-index: 10000;
+    }
+
+    .lightbox-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: rotate(90deg);
+    }
+
+    .lightbox-close svg {
+        width: 24px;
+        height: 24px;
+        color: white;
+    }
+
     @media (max-width: 768px) {
         .menu-section h1 {
             font-size: 2rem;
@@ -246,6 +457,10 @@ const categorias = [
             gap: 20px;
         }
 
+        .producto-card.solo-imagen .producto-imagen {
+            height: 250px;
+        }
+
         .filtros {
             gap: 8px;
         }
@@ -254,12 +469,29 @@ const categorias = [
             padding: 8px 16px;
             font-size: 0.85rem;
         }
+
+        .contacto-card {
+            padding: 30px 20px;
+        }
+
+        .contacto-card h2 {
+            font-size: 1.8rem;
+        }
+
+        .contacto-card p {
+            font-size: 1rem;
+        }
+
+        .btn-whatsapp {
+            padding: 14px 24px;
+            font-size: 1rem;
+        }
     }
 </style>
 
 <script>
     document.querySelectorAll('.btn-filtro').forEach((botton) => {
-        botton.addEventListener('click', function() {
+        botton.addEventListener('click', function(this: HTMLElement) {
             const filtroSeleccionado = this.dataset.filtro;
 
             // Actualizar botón activo
@@ -272,12 +504,67 @@ const categorias = [
             document.querySelectorAll('.producto-card').forEach((card) => {
                 if (filtroSeleccionado === 'todos') {
                     card.classList.remove('oculto');
-                } else if (card.dataset.categoria === filtroSeleccionado) {
+                } else if ((card as HTMLElement).dataset.categoria === filtroSeleccionado) {
                     card.classList.remove('oculto');
                 } else {
                     card.classList.add('oculto');
                 }
             });
+
+            // Mostrar/ocultar mensaje de contacto
+            const contactoPersonalizado = document.querySelector('.contacto-personalizado') as HTMLElement;
+            if (contactoPersonalizado) {
+                if (filtroSeleccionado === 'personalizados' || filtroSeleccionado === 'todos') {
+                    contactoPersonalizado.style.display = 'flex';
+                } else {
+                    contactoPersonalizado.style.display = 'none';
+                }
+            }
         });
+    });
+
+    // Lightbox functionality
+    const lightboxModal = document.getElementById('lightbox-modal') as HTMLElement;
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const closeBtn = document.querySelector('.lightbox-close') as HTMLElement;
+
+    // Agregar evento click a imágenes de productos personalizados
+    document.querySelectorAll('.producto-card.solo-imagen').forEach((card) => {
+        card.addEventListener('click', function(this: HTMLElement) {
+            const img = this.querySelector('img') as HTMLImageElement;
+            if (img && lightboxImg && lightboxModal) {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxModal.classList.add('activo');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Cerrar al hacer click en el botón X
+    if (closeBtn && lightboxModal) {
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            lightboxModal.classList.remove('activo');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Cerrar al hacer click en el fondo oscuro
+    if (lightboxModal) {
+        lightboxModal.addEventListener('click', function(e) {
+            if (e.target === lightboxModal) {
+                lightboxModal.classList.remove('activo');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightboxModal) {
+            lightboxModal.classList.remove('activo');
+            document.body.style.overflow = '';
+        }
     });
 </script>
