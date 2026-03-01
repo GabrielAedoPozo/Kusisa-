@@ -17,24 +17,52 @@
 
 		<div class="flex flex-wrap md:flex-nowrap justify-center gap-4 sm:gap-6 md:gap-8 pt-6 md:pt-10 w-full">
 
-			<div class="text-center w-full sm:w-1/2 md:w-auto">
-				<img src="/img/galletas.jpeg" alt="Cupcakes clásicos de vainilla y chocolate - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
-                <p class="mt-5">Clásicos</p>
+			<div class="text-center w-full sm:w-1/2 md:w-auto sabor-card">
+				<a href="/menu#clasicos" class="sabor-link">
+					<div class="sabor-imagen-container">
+						<img src="/img/galletas.jpeg" alt="Cupcakes clásicos de vainilla y chocolate - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+						<div class="sabor-overlay">
+							<button class="sabor-btn">Ver Menú</button>
+						</div>
+					</div>
+					<p class="mt-5">Clásicos</p>
+				</a>
             </div>
 
-			<div class="text-center w-full sm:w-1/2 md:w-auto">
-				<img src="/img/chesecake.jpeg" alt="Postres fríos: tiramisú y cheesecake artesanal - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
-                <p class="mt-5">Postres fríos</p>
+			<div class="text-center w-full sm:w-1/2 md:w-auto sabor-card">
+				<a href="/menu#postres_frios" class="sabor-link">
+					<div class="sabor-imagen-container">
+						<img src="/img/chesecake.jpeg" alt="Postres fríos: tiramisú y cheesecake artesanal - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+						<div class="sabor-overlay">
+							<button class="sabor-btn">Ver Menú</button>
+						</div>
+					</div>
+					<p class="mt-5">Postres fríos</p>
+				</a>
             </div>
 
-			<div class="text-center w-full sm:w-1/2 md:w-auto">
-				<img src="/img/alfajores.jpeg" alt="Alfajores y bocaditos artesanales - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
-                <p class="mt-5">Bocaditos</p>
+			<div class="text-center w-full sm:w-1/2 md:w-auto sabor-card">
+				<a href="/menu#bocaditos" class="sabor-link">
+					<div class="sabor-imagen-container">
+						<img src="/img/alfajores.jpeg" alt="Alfajores y bocaditos artesanales - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+						<div class="sabor-overlay">
+							<button class="sabor-btn">Ver Menú</button>
+						</div>
+					</div>
+					<p class="mt-5">Bocaditos</p>
+				</a>
             </div>
 
-			<div class="text-center w-full sm:w-1/2 md:w-auto">
-				<img src="/img/personalizado.jpeg" alt="Pasteles y cupcakes personalizados para eventos - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
-                <p class="mt-5">Personalizados</p>
+			<div class="text-center w-full sm:w-1/2 md:w-auto sabor-card">
+				<a href="/menu#personalizados" class="sabor-link">
+					<div class="sabor-imagen-container">
+						<img src="/img/personalizado.jpeg" alt="Pasteles y cupcakes personalizados para eventos - Kusisa Repostería" class="w-full max-w-[480px] mx-auto h-130 object-cover">
+						<div class="sabor-overlay">
+							<button class="sabor-btn">Ver Menú</button>
+						</div>
+					</div>
+					<p class="mt-5">Personalizados</p>
+				</a>
             </div>
 
         </div>
@@ -54,6 +82,69 @@
 
 
 </main>
+
+<style>
+	.sabor-link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+
+	.sabor-imagen-container {
+		position: relative;
+		overflow: hidden;
+		border-radius: 8px;
+	}
+
+	.sabor-imagen-container img {
+		transition: transform 0.4s ease;
+	}
+
+	.sabor-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.sabor-btn {
+		padding: 12px 32px;
+		border: 2px solid white;
+		background: transparent;
+		color: white;
+		font-size: 1.1rem;
+		font-weight: 600;
+		border-radius: 50px;
+		cursor: pointer;
+		transform: translateY(20px);
+		transition: all 0.3s ease;
+		pointer-events: none;
+	}
+
+	.sabor-card:hover .sabor-overlay {
+		opacity: 1;
+	}
+
+	.sabor-card:hover .sabor-btn {
+		transform: translateY(0);
+	}
+
+	.sabor-card:hover .sabor-imagen-container img {
+		transform: scale(1.05);
+	}
+
+	.sabor-btn:hover {
+		background: white;
+		color: black;
+	}
+</style>
 
 <script>
 	const parallaxBanner = document.getElementById('parallaxBanner');
@@ -90,3 +181,4 @@
     }
 
 </script>
+

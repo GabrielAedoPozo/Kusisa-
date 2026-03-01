@@ -21,10 +21,8 @@ const productos = [
   { id: 7, nombre: 'Pavlova', categoria: 'postres_frios', precio: 3.50 },
   { id: 8, nombre: 'Mousse de Chocolate', categoria: 'postres_frios', precio: 4.00 },
   
-  { id: 9, nombre: 'Brownie Bite', categoria: 'bocaditos', precio: 1.50 },
-  { id: 10, nombre: 'Cookie de Almendra', categoria: 'bocaditos', precio: 1.75 },
-  { id: 11, nombre: 'Mini Tarta', categoria: 'bocaditos', precio: 2.00 },
-  { id: 12, nombre: 'Bombón de Frutas', categoria: 'bocaditos', precio: 1.25 },
+  { id: 9, nombre: 'Catálogo Bocaditos 1', categoria: 'bocaditos', imagen: '/img/bocaditos1.jpeg' },
+  { id: 10, nombre: 'Catálogo Bocaditos 2', categoria: 'bocaditos', imagen: '/img/bocaditos2.jpeg' },
   
 
   { id: 14, nombre: 'Cupcakes Temáticos', categoria: 'personalizados', imagen: '/img/personalizado1.jpeg' },
@@ -75,7 +73,7 @@ const categorias = [
 
             <!-- Grid de Productos -->
             <div class="productos-grid">
-                {productos.map((producto) => (
+                {productos.filter(p => p.categoria !== 'bocaditos').map((producto) => (
                     <div class={`producto-card ${producto.imagen ? 'solo-imagen' : ''}`} data-categoria={producto.categoria}>
                         <div class="producto-imagen">
                             {producto.imagen ? (
@@ -106,6 +104,15 @@ const categorias = [
                                 )}
                             </div>
                         )}
+                    </div>
+                ))}
+            </div>
+
+            <!-- Sección Especial de Bocaditos -->
+            <div class="bocaditos-catalogo" style="display: none;">
+                {productos.filter(p => p.categoria === 'bocaditos').map((producto) => (
+                    <div class="bocadito-imagen-grande">
+                        <img src={producto.imagen} alt={producto.nombre} />
                     </div>
                 ))}
             </div>
@@ -313,6 +320,35 @@ const categorias = [
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
+    /* Sección de Bocaditos Catálogo */
+    .bocaditos-catalogo {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .bocadito-imagen-grande {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .bocadito-imagen-grande:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+    }
+
+    .bocadito-imagen-grande img {
+        width: 100%;
+        height: auto;
+        display: block;
+        cursor: pointer;
+    }
+
     /* Sección de Contacto Personalizado */
     .contacto-personalizado {
         margin-top: 60px;
@@ -500,24 +536,38 @@ const categorias = [
             });
             this.classList.add('activo');
 
-            // Filtrar productos
-            document.querySelectorAll('.producto-card').forEach((card) => {
-                if (filtroSeleccionado === 'todos') {
-                    card.classList.remove('oculto');
-                } else if ((card as HTMLElement).dataset.categoria === filtroSeleccionado) {
-                    card.classList.remove('oculto');
-                } else {
-                    card.classList.add('oculto');
-                }
-            });
-
-            // Mostrar/ocultar mensaje de contacto
+            const productosGrid = document.querySelector('.productos-grid') as HTMLElement;
+            const bocaditosCatalogo = document.querySelector('.bocaditos-catalogo') as HTMLElement;
             const contactoPersonalizado = document.querySelector('.contacto-personalizado') as HTMLElement;
-            if (contactoPersonalizado) {
-                if (filtroSeleccionado === 'personalizados' || filtroSeleccionado === 'todos') {
-                    contactoPersonalizado.style.display = 'flex';
-                } else {
-                    contactoPersonalizado.style.display = 'none';
+
+            // Manejar visualización según el filtro
+            if (filtroSeleccionado === 'bocaditos') {
+                // Solo mostrar catálogo de bocaditos
+                if (productosGrid) productosGrid.style.display = 'none';
+                if (bocaditosCatalogo) bocaditosCatalogo.style.display = 'flex';
+                if (contactoPersonalizado) contactoPersonalizado.style.display = 'none';
+            } else {
+                // Mostrar grid de productos y filtrar
+                if (productosGrid) productosGrid.style.display = 'grid';
+                if (bocaditosCatalogo) bocaditosCatalogo.style.display = 'none';
+
+                document.querySelectorAll('.producto-card').forEach((card) => {
+                    if (filtroSeleccionado === 'todos') {
+                        card.classList.remove('oculto');
+                    } else if ((card as HTMLElement).dataset.categoria === filtroSeleccionado) {
+                        card.classList.remove('oculto');
+                    } else {
+                        card.classList.add('oculto');
+                    }
+                });
+
+                // Mostrar/ocultar mensaje de contacto personalizado
+                if (contactoPersonalizado) {
+                    if (filtroSeleccionado === 'personalizados' || filtroSeleccionado === 'todos') {
+                        contactoPersonalizado.style.display = 'flex';
+                    } else {
+                        contactoPersonalizado.style.display = 'none';
+                    }
                 }
             }
         });
@@ -535,6 +585,18 @@ const categorias = [
             if (img && lightboxImg && lightboxModal) {
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
+                lightboxModal.classList.add('activo');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Agregar evento click a imágenes de bocaditos catálogo
+    document.querySelectorAll('.bocadito-imagen-grande img').forEach((img) => {
+        img.addEventListener('click', function(this: HTMLImageElement) {
+            if (lightboxImg && lightboxModal) {
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
                 lightboxModal.classList.add('activo');
                 document.body.style.overflow = 'hidden';
             }
@@ -565,6 +627,21 @@ const categorias = [
         if (e.key === 'Escape' && lightboxModal) {
             lightboxModal.classList.remove('activo');
             document.body.style.overflow = '';
+        }
+    });
+
+    // Manejar hash de la URL para activar filtro al cargar
+    window.addEventListener('DOMContentLoaded', function() {
+        const hash = window.location.hash.substring(1); // Remover el #
+        if (hash) {
+            const btnFiltro = document.querySelector(`[data-filtro="${hash}"]`) as HTMLElement;
+            if (btnFiltro) {
+                btnFiltro.click();
+                // Scroll suave a la sección
+                setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+            }
         }
     });
 </script>
