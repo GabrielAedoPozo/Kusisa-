@@ -11,36 +11,33 @@ const seoProps = {
 };
 
 const productos = [
-  { id: 1, nombre: 'Cupcake Vainilla', categoria: 'clasicos', precio: 2.50 },
-  { id: 2, nombre: 'Cupcake Chocolate', categoria: 'clasicos', precio: 2.50 },
-  { id: 3, nombre: 'Cupcake Red Velvet', categoria: 'clasicos', precio: 3.00 },
-  { id: 4, nombre: 'Cupcake Fresa', categoria: 'clasicos', precio: 2.75 },
+  { id: 2, nombre: 'Keke de Vainilla con Frutos rojos', descripcion: '10 porciones', categoria: 'clasicos', precio: 70, imagen: '/img/torta2.jpeg' },
+  { id: 3, nombre: 'Pastel Red Velvet con Frosting de Queso Crema', descripcion: '8 porciones', categoria: 'clasicos', precio: 65, imagen: '/img/torta3.jpeg' },
+  { id: 4, nombre: 'Keke de Banana Rectangular', descripcion: '8 rebanadas', categoria: 'clasicos', precio: 30, imagen: '/img/torta4.jpeg' },
+  { id: 5, nombre: 'Crema Volteada Grande', descripcion: '15 porciones', categoria: 'clasicos', precio: 80, imagen: '/img/torta5.jpeg' },
+  { id: 6, nombre: 'Carrot Cake con Nueces', descripcion: '10 porciones', categoria: 'clasicos', precio: 70, imagen: '/img/torta6.jpeg' },
+  { id: 7, nombre: 'Pastel Tres Leches', descripcion: '10 porciones', categoria: 'clasicos', precio: 65, imagen: '/img/torta7.jpeg' },
   
-  { id: 5, nombre: 'Tiramisú', categoria: 'postres_frios', precio: 4.50 },
-  { id: 6, nombre: 'Cheesecake Frío', categoria: 'postres_frios', precio: 4.75 },
-  { id: 7, nombre: 'Pavlova', categoria: 'postres_frios', precio: 3.50 },
-  { id: 8, nombre: 'Mousse de Chocolate', categoria: 'postres_frios', precio: 4.00 },
-  
-  { id: 9, nombre: 'Catálogo Bocaditos 1', categoria: 'bocaditos', imagen: '/img/bocaditos1.jpeg' },
-  { id: 10, nombre: 'Catálogo Bocaditos 2', categoria: 'bocaditos', imagen: '/img/bocaditos2.jpeg' },
+  { id: 16, nombre: 'Catálogo Bocaditos 1', categoria: 'bocaditos', imagen: '/img/bocaditos1.jpeg' },
+  { id: 17, nombre: 'Catálogo Bocaditos 2', categoria: 'bocaditos', imagen: '/img/bocaditos2.jpeg' },
   
 
-  { id: 14, nombre: 'Cupcakes Temáticos', categoria: 'personalizados', imagen: '/img/personalizado1.jpeg' },
-  { id: 15, nombre: 'Torta de Celebración', categoria: 'personalizados', imagen: '/img/personalizado2.jpeg' },
-  { id: 16, nombre: 'Diseño Especial', categoria: 'personalizados', imagen: '/img/personalizado3.jpeg' },
-  { id: 17, nombre: 'Pastel de Boda', categoria: 'personalizados', imagen: '/img/personalizado4.jpeg' },
-  { id: 18, nombre: 'Torta Infantil', categoria: 'personalizados', imagen: '/img/personalizado5.jpeg' },
-  { id: 19, nombre: 'Diseño Único', categoria: 'personalizados', imagen: '/img/personalizado6.jpeg' },
-  { id: 20, nombre: 'Pastel Decorado', categoria: 'personalizados', imagen: '/img/personalizado7.jpeg' },
-  { id: 21, nombre: 'Torta Especial', categoria: 'personalizados', imagen: '/img/personalizado8.jpeg' },
-  { id: 22, nombre: 'Creación Personalizada', categoria: 'personalizados', imagen: '/img/personalizado9.jpeg' },
-  { id: 23, nombre: 'Pastel de Evento', categoria: 'personalizados', imagen: '/img/personalizado10.jpeg' },
-  { id: 24, nombre: 'Diseño Artístico', categoria: 'personalizados', imagen: '/img/personalizado12.jpeg' },
-  { id: 25, nombre: 'Torta Elegante', categoria: 'personalizados', imagen: '/img/personalizado13.jpeg' },
-  { id: 26, nombre: 'Pastel Gourmet', categoria: 'personalizados', imagen: '/img/personalizado14.jpg' },
-  { id: 27, nombre: 'Diseño Premium', categoria: 'personalizados', imagen: '/img/personalizado15.jpg' },
-  { id: 28, nombre: 'Torta Deluxe', categoria: 'personalizados', imagen: '/img/personalizado16.jpg' },
-  { id: 29, nombre: 'Creación Exclusiva', categoria: 'personalizados', imagen: '/img/personalizado17.jpg' },
+  { id: 21, nombre: 'Cupcakes Temáticos', categoria: 'personalizados', imagen: '/img/personalizado1.jpeg' },
+  { id: 22, nombre: 'Torta de Celebración', categoria: 'personalizados', imagen: '/img/personalizado2.jpeg' },
+  { id: 23, nombre: 'Diseño Especial', categoria: 'personalizados', imagen: '/img/personalizado3.jpeg' },
+  { id: 24, nombre: 'Pastel de Boda', categoria: 'personalizados', imagen: '/img/personalizado4.jpeg' },
+  { id: 25, nombre: 'Torta Infantil', categoria: 'personalizados', imagen: '/img/personalizado5.jpeg' },
+  { id: 26, nombre: 'Diseño Único', categoria: 'personalizados', imagen: '/img/personalizado6.jpeg' },
+  { id: 27, nombre: 'Pastel Decorado', categoria: 'personalizados', imagen: '/img/personalizado7.jpeg' },
+  { id: 28, nombre: 'Torta Especial', categoria: 'personalizados', imagen: '/img/personalizado8.jpeg' },
+  { id: 29, nombre: 'Creación Personalizada', categoria: 'personalizados', imagen: '/img/personalizado9.jpeg' },
+  { id: 30, nombre: 'Pastel de Evento', categoria: 'personalizados', imagen: '/img/personalizado10.jpeg' },
+  { id: 31, nombre: 'Diseño Artístico', categoria: 'personalizados', imagen: '/img/personalizado12.jpeg' },
+  { id: 32, nombre: 'Torta Elegante', categoria: 'personalizados', imagen: '/img/personalizado13.jpeg' },
+  { id: 33, nombre: 'Pastel Gourmet', categoria: 'personalizados', imagen: '/img/personalizado14.jpg' },
+  { id: 34, nombre: 'Diseño Premium', categoria: 'personalizados', imagen: '/img/personalizado15.jpg' },
+  { id: 35, nombre: 'Torta Deluxe', categoria: 'personalizados', imagen: '/img/personalizado16.jpg' },
+  { id: 36, nombre: 'Creación Exclusiva', categoria: 'personalizados', imagen: '/img/personalizado17.jpg' },
 ];
 
 const categorias = [
@@ -74,7 +71,7 @@ const categorias = [
             <!-- Grid de Productos -->
             <div class="productos-grid">
                 {productos.filter(p => p.categoria !== 'bocaditos').map((producto) => (
-                    <div class={`producto-card ${producto.imagen ? 'solo-imagen' : ''}`} data-categoria={producto.categoria}>
+                    <div class={`producto-card ${producto.categoria === 'personalizados' && producto.imagen ? 'solo-imagen' : ''}`} data-categoria={producto.categoria}>
                         <div class="producto-imagen">
                             {producto.imagen ? (
                                 <img src={producto.imagen} alt={producto.nombre} />
@@ -93,14 +90,20 @@ const categorias = [
                                 </div>
                             )}
                         </div>
-                        {!producto.imagen && (
+                        {producto.categoria !== 'personalizados' && (
                             <div class="producto-info">
                                 <h3>{producto.nombre}</h3>
+                                {producto.descripcion && (
+                                    <p class="descripcion">{producto.descripcion}</p>
+                                )}
                                 {producto.precio && (
                                     <>
-                                        <p class="precio">${producto.precio.toFixed(2)}</p>
+                                        <p class="precio">S/. {producto.precio.toFixed(2)}</p>
                                         <button class="btn-agregar">Agregar</button>
                                     </>
+                                )}
+                                {!producto.precio && producto.descripcion && (
+                                    <button class="btn-agregar">Consultar precio</button>
                                 )}
                             </div>
                         )}
@@ -208,7 +211,7 @@ const categorias = [
     /* Grid de Productos */
     .productos-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 30px;
         margin-top: 30px;
     }
@@ -241,7 +244,7 @@ const categorias = [
     }
 
     .producto-card.solo-imagen .producto-imagen {
-        height: 350px;
+        height: 450px;
         border-bottom: none;
     }
 
@@ -253,7 +256,7 @@ const categorias = [
 
     .producto-imagen {
         width: 100%;
-        height: 250px;
+        height: 350px;
         background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
         display: flex;
         align-items: center;
@@ -292,6 +295,13 @@ const categorias = [
         color: #000000;
         margin-bottom: 8px;
         font-family: 'Georgia', serif;
+    }
+
+    .descripcion {
+        font-size: 0.95rem;
+        color: #666666;
+        margin-bottom: 12px;
+        font-style: italic;
     }
 
     .precio {
@@ -489,12 +499,16 @@ const categorias = [
         }
 
         .productos-grid {
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
 
+        .producto-imagen {
+            height: 280px;
+        }
+
         .producto-card.solo-imagen .producto-imagen {
-            height: 250px;
+            height: 320px;
         }
 
         .filtros {
