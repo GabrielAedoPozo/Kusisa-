@@ -14,9 +14,14 @@ const productos = [
   { id: 2, nombre: 'Keke de Vainilla con Frutos rojos', descripcion: '10 porciones', categoria: 'clasicos', precio: 70, imagen: '/img/torta2.jpeg' },
   { id: 3, nombre: 'Pastel Red Velvet con Frosting de Queso Crema', descripcion: '8 porciones', categoria: 'clasicos', precio: 65, imagen: '/img/torta3.jpeg' },
   { id: 4, nombre: 'Keke de Banana Rectangular', descripcion: '8 rebanadas', categoria: 'clasicos', precio: 30, imagen: '/img/torta4.jpeg' },
-  { id: 5, nombre: 'Crema Volteada Grande', descripcion: '15 porciones', categoria: 'clasicos', precio: 80, imagen: '/img/torta5.jpeg' },
-  { id: 6, nombre: 'Carrot Cake con Nueces', descripcion: '10 porciones', categoria: 'clasicos', precio: 70, imagen: '/img/torta6.jpeg' },
-  { id: 7, nombre: 'Pastel Tres Leches', descripcion: '10 porciones', categoria: 'clasicos', precio: 65, imagen: '/img/torta7.jpeg' },
+  { id: 5, nombre: 'Carrot Cake con Nueces', descripcion: '10 porciones', categoria: 'clasicos', precio: 70, imagen: '/img/torta6.jpeg' },
+  { id: 6, nombre: 'Muffins de Arandanos', descripcion: '6 unidades', categoria: 'clasicos', precio: 35, imagen: '/img/tortitas.jpeg' },
+  { id: 7, nombre: 'Cookies de chips y oreo', descripcion: '12 unidades', categoria: 'clasicos', precio: 30, imagen: '/img/tortitas2.jpeg' },
+  { id: 8, nombre: 'Cinnamon rolls', descripcion: '12 unidades', categoria: 'clasicos', precio: 35, imagen: '/img/tortitas3.jpeg' },
+  { id: 9, nombre: 'Brownies Clásicos', descripcion: '12 unidades', categoria: 'clasicos', precio: 55, imagen: '/img/tortitas4.jpeg' },
+
+  { id: 10, nombre: 'Crema Volteada Grande', descripcion: '15 porciones', categoria: 'postres_frios', precio: 80, imagen: '/img/torta5.jpeg' },
+  { id: 11, nombre: 'Pastel Tres Leches', descripcion: '10 porciones', categoria: 'postres_frios', precio: 65, imagen: '/img/torta7.jpeg' },
   
   { id: 16, nombre: 'Catálogo Bocaditos 1', categoria: 'bocaditos', imagen: '/img/bocaditos1.jpeg' },
   { id: 17, nombre: 'Catálogo Bocaditos 2', categoria: 'bocaditos', imagen: '/img/bocaditos2.jpeg' },
@@ -38,6 +43,9 @@ const productos = [
   { id: 34, nombre: 'Diseño Premium', categoria: 'personalizados', imagen: '/img/personalizado15.jpg' },
   { id: 35, nombre: 'Torta Deluxe', categoria: 'personalizados', imagen: '/img/personalizado16.jpg' },
   { id: 36, nombre: 'Creación Exclusiva', categoria: 'personalizados', imagen: '/img/personalizado17.jpg' },
+  { id: 37, nombre: 'Creación Exclusiva', categoria: 'personalizados', imagen: '/img/per1.jpeg' },
+  { id: 38, nombre: 'Creación Exclusiva', categoria: 'personalizados', imagen: '/img/per2.jpeg' },
+  { id: 39, nombre: 'Creación Exclusiva', categoria: 'personalizados', imagen: '/img/per3.jpeg' },
 ];
 
 const categorias = [
@@ -55,6 +63,29 @@ const categorias = [
     <main class="menu-container">
         <section class="menu-section">
             <h1>Nuestro Menú</h1>
+            
+            <!-- Buscador -->
+            <div class="buscador-container">
+                <div class="buscador-input-wrapper">
+                    <svg class="icono-buscar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="buscador-productos" 
+                        class="buscador-input" 
+                        placeholder="Buscar productos por nombre..."
+                        autocomplete="off"
+                    />
+                    <button class="btn-limpiar" id="limpiar-busqueda" style="display: none;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
             
             <!-- Filtros -->
             <div class="filtros">
@@ -177,6 +208,75 @@ const categorias = [
     }
 
     /* Filtros */
+    /* Buscador */
+    .buscador-container {
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+
+    .buscador-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .icono-buscar {
+        position: absolute;
+        left: 16px;
+        width: 20px;
+        height: 20px;
+        color: #666666;
+        pointer-events: none;
+    }
+
+    .buscador-input {
+        width: 100%;
+        padding: 14px 50px 14px 50px;
+        border: 2px solid #e0e0e0;
+        border-radius: 50px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: white;
+        color: #000000;
+    }
+
+    .buscador-input:focus {
+        outline: none;
+        border-color: #000000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .buscador-input::placeholder {
+        color: #999999;
+    }
+
+    .btn-limpiar {
+        position: absolute;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: #f5f5f5;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+
+    .btn-limpiar:hover {
+        background: #e0e0e0;
+        transform: scale(1.1);
+    }
+
+    .btn-limpiar svg {
+        width: 16px;
+        height: 16px;
+        color: #666666;
+    }
+
     .filtros {
         display: flex;
         justify-content: center;
@@ -536,10 +636,104 @@ const categorias = [
             padding: 14px 24px;
             font-size: 1rem;
         }
+
+        .buscador-input {
+            font-size: 0.9rem;
+            padding: 12px 45px 12px 45px;
+        }
+
+        .icono-buscar {
+            width: 18px;
+            height: 18px;
+            left: 14px;
+        }
     }
 </style>
 
 <script>
+    // Variable global para el texto de búsqueda
+    let textoBusqueda = '';
+
+    // Función para filtrar productos
+    function filtrarProductos() {
+        const filtroSeleccionado = document.querySelector('.btn-filtro.activo')?.getAttribute('data-filtro') || 'todos';
+        const productosGrid = document.querySelector('.productos-grid') as HTMLElement;
+        const bocaditosCatalogo = document.querySelector('.bocaditos-catalogo') as HTMLElement;
+        const contactoPersonalizado = document.querySelector('.contacto-personalizado') as HTMLElement;
+
+        // Si el filtro es bocaditos, no aplicar búsqueda
+        if (filtroSeleccionado === 'bocaditos') {
+            if (productosGrid) productosGrid.style.display = 'none';
+            if (bocaditosCatalogo) bocaditosCatalogo.style.display = 'flex';
+            if (contactoPersonalizado) contactoPersonalizado.style.display = 'none';
+            return;
+        }
+
+        // Mostrar grid de productos
+        if (productosGrid) productosGrid.style.display = 'grid';
+        if (bocaditosCatalogo) bocaditosCatalogo.style.display = 'none';
+
+        let hayResultadosVisible = false;
+
+        // Filtrar productos por categoría y búsqueda
+        document.querySelectorAll('.producto-card').forEach((card) => {
+            const cardElement = card as HTMLElement;
+            const categoria = cardElement.dataset.categoria;
+            const nombreProducto = cardElement.querySelector('h3')?.textContent?.toLowerCase() || '';
+            
+            // Verificar filtro de categoría
+            const cumpleFiltroCategoria = filtroSeleccionado === 'todos' || categoria === filtroSeleccionado;
+            
+            // Verificar búsqueda de texto
+            const cumpleBusqueda = textoBusqueda === '' || nombreProducto.includes(textoBusqueda);
+            
+            if (cumpleFiltroCategoria && cumpleBusqueda) {
+                card.classList.remove('oculto');
+                hayResultadosVisible = true;
+            } else {
+                card.classList.add('oculto');
+            }
+        });
+
+        // Mostrar/ocultar mensaje de contacto personalizado
+        if (contactoPersonalizado) {
+            if ((filtroSeleccionado === 'personalizados' || filtroSeleccionado === 'todos') && hayResultadosVisible) {
+                contactoPersonalizado.style.display = 'flex';
+            } else {
+                contactoPersonalizado.style.display = 'none';
+            }
+        }
+    }
+
+    // Funcionalidad de búsqueda
+    const buscadorInput = document.getElementById('buscador-productos') as HTMLInputElement;
+    const btnLimpiar = document.getElementById('limpiar-busqueda') as HTMLElement;
+
+    if (buscadorInput) {
+        buscadorInput.addEventListener('input', function() {
+            textoBusqueda = this.value.toLowerCase().trim();
+            
+            // Mostrar/ocultar botón de limpiar
+            if (btnLimpiar) {
+                btnLimpiar.style.display = textoBusqueda ? 'flex' : 'none';
+            }
+            
+            filtrarProductos();
+        });
+    }
+
+    if (btnLimpiar) {
+        btnLimpiar.addEventListener('click', function() {
+            if (buscadorInput) {
+                buscadorInput.value = '';
+                textoBusqueda = '';
+                this.style.display = 'none';
+                filtrarProductos();
+                buscadorInput.focus();
+            }
+        });
+    }
+
     document.querySelectorAll('.btn-filtro').forEach((botton) => {
         botton.addEventListener('click', function(this: HTMLElement) {
             const filtroSeleccionado = this.dataset.filtro;
@@ -550,40 +744,8 @@ const categorias = [
             });
             this.classList.add('activo');
 
-            const productosGrid = document.querySelector('.productos-grid') as HTMLElement;
-            const bocaditosCatalogo = document.querySelector('.bocaditos-catalogo') as HTMLElement;
-            const contactoPersonalizado = document.querySelector('.contacto-personalizado') as HTMLElement;
-
-            // Manejar visualización según el filtro
-            if (filtroSeleccionado === 'bocaditos') {
-                // Solo mostrar catálogo de bocaditos
-                if (productosGrid) productosGrid.style.display = 'none';
-                if (bocaditosCatalogo) bocaditosCatalogo.style.display = 'flex';
-                if (contactoPersonalizado) contactoPersonalizado.style.display = 'none';
-            } else {
-                // Mostrar grid de productos y filtrar
-                if (productosGrid) productosGrid.style.display = 'grid';
-                if (bocaditosCatalogo) bocaditosCatalogo.style.display = 'none';
-
-                document.querySelectorAll('.producto-card').forEach((card) => {
-                    if (filtroSeleccionado === 'todos') {
-                        card.classList.remove('oculto');
-                    } else if ((card as HTMLElement).dataset.categoria === filtroSeleccionado) {
-                        card.classList.remove('oculto');
-                    } else {
-                        card.classList.add('oculto');
-                    }
-                });
-
-                // Mostrar/ocultar mensaje de contacto personalizado
-                if (contactoPersonalizado) {
-                    if (filtroSeleccionado === 'personalizados' || filtroSeleccionado === 'todos') {
-                        contactoPersonalizado.style.display = 'flex';
-                    } else {
-                        contactoPersonalizado.style.display = 'none';
-                    }
-                }
-            }
+            // Usar la función de filtrado centralizada
+            filtrarProductos();
         });
     });
 
