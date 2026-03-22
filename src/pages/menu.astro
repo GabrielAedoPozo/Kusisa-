@@ -22,6 +22,8 @@ const productos = [
 
   { id: 10, nombre: 'Crema Volteada Grande', descripcion: '15 porciones', categoria: 'postres_frios', precio: 80, imagen: '/img/torta5.jpeg' },
   { id: 11, nombre: 'Pastel Tres Leches', descripcion: '10 porciones', categoria: 'postres_frios', precio: 65, imagen: '/img/torta7.jpeg' },
+    { id: 12, nombre: 'New York Cheesecake de Frutos rojos', descripcion: '8-10 porciones', categoria: 'postres_frios', precio: 80, imagen: '/img/postref.jpeg' },
+    { id: 13, nombre: 'Cheesecake de Maracuya', descripcion: '8-10 porciones', categoria: 'postres_frios', precio: 65, imagen: '/img/postref2.jpeg' },
   
   { id: 16, nombre: 'Catálogo Bocaditos 1', categoria: 'bocaditos', imagen: '/img/bocaditos1.jpeg' },
   { id: 17, nombre: 'Catálogo Bocaditos 2', categoria: 'bocaditos', imagen: '/img/bocaditos2.jpeg' },
@@ -130,12 +132,32 @@ const categorias = [
                                 {producto.precio && (
                                     <>
                                         <p class="precio">S/. {producto.precio.toFixed(2)}</p>
-                                        <button class="btn-agregar">Agregar</button>
+                                        <button class="btn-whatsapp-comprar" data-producto={producto.nombre} data-tipo="clasico">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                            </svg>
+                                            Comprar en WhatsApp
+                                        </button>
                                     </>
                                 )}
                                 {!producto.precio && producto.descripcion && (
-                                    <button class="btn-agregar">Consultar precio</button>
+                                    <button class="btn-whatsapp-comprar" data-producto={producto.nombre} data-tipo="clasico">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                        </svg>
+                                        Comprar en WhatsApp
+                                    </button>
                                 )}
+                            </div>
+                        )}
+                        {producto.categoria === 'personalizados' && (
+                            <div class="producto-overlay-personalizado">
+                                <button class="btn-whatsapp-comprar" data-producto={producto.nombre} data-tipo="personalizado">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                    </svg>
+                                    Comprar en WhatsApp
+                                </button>
                             </div>
                         )}
                     </div>
@@ -156,19 +178,54 @@ const categorias = [
                 <div class="contacto-card">
                     <h2>¿Quieres el tuyo?</h2>
                     <p>Los precios varían según el diseño, tamaño y detalles. ¡Contáctanos para cotizar tu pastel personalizado!</p>
-                    <a href="https://wa.me/593999999999?text=Hola%20Kusisa,%20quiero%20cotizar%20un%20pastel%20personalizado" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="btn-whatsapp">
+                    <button class="btn-whatsapp" data-producto="pastel personalizado" data-tipo="personalizado">
                         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                         </svg>
                         Contáctanos por WhatsApp
-                    </a>
+                          </button>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Modal de Procedimiento -->
+    <div id="procedimiento-modal" class="procedimiento-modal">
+        <div class="procedimiento-content">
+            <button class="procedimiento-close" aria-label="Cerrar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="procedimiento-body">
+                <svg class="procedimiento-icon" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                <h2>Nuestro procedimiento</h2>
+                <div id="procedimiento-mensaje" class="procedimiento-mensaje">
+                    <p><strong>Por favor ten en cuenta:</strong></p>
+                    <ul>
+                        <li>Nos pondremos en contacto pronto por WhatsApp.</li>
+                        <li>Confirmaremos disponibilidad y detalles de tu pedido.</li>
+                    </ul>
+                </div>
+                <div id="procedimiento-personalizado" class="procedimiento-extra" style="display: none;">
+                    <p><strong>Si tu pedido es personalizado:</strong></p>
+                    <ul>
+                        <li>Cotizaremos tu torta segun el diseno y lo que quieras.</li>
+                        <li>Te mostraremos opciones de precio y tiempos de entrega.</li>
+                    </ul>
+                </div>
+                <a id="procedimiento-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="btn-confirmar">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    Confirmar
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Lightbox -->
     <div id="lightbox-modal" class="lightbox-modal">
@@ -411,12 +468,17 @@ const categorias = [
         margin-bottom: 15px;
     }
 
-    .btn-agregar {
+    .btn-whatsapp-comprar {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
         width: 100%;
         padding: 12px;
-        background: #000000;
+        background: #25D366;
         color: white;
         border: none;
+        text-decoration: none;
         border-radius: 6px;
         cursor: pointer;
         font-weight: 600;
@@ -424,10 +486,172 @@ const categorias = [
         transition: all 0.3s ease;
     }
 
-    .btn-agregar:hover {
-        background: #333333;
+    .btn-whatsapp-comprar:hover {
+        background: #20BA5A;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp-comprar svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Overlay para productos personalizados */
+    .producto-overlay-personalizado {
+        position: absolute;
+        left: 50%;
+        bottom: 14px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        background: transparent;
+        width: auto;
+        padding: 0;
+    }
+
+    /* Modal de Procedimiento */
+    .procedimiento-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 9998;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .procedimiento-modal.activo {
+        display: flex;
+        opacity: 1;
+    }
+
+    .procedimiento-content {
+        background: white;
+        border-radius: 16px;
+        padding: 40px 30px;
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+        animation: slideUp 0.4s ease;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .procedimiento-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: #f5f5f5;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .procedimiento-close:hover {
+        background: #e0e0e0;
+        transform: rotate(90deg);
+    }
+
+    .procedimiento-close svg {
+        width: 20px;
+        height: 20px;
+        color: #333;
+    }
+
+    .procedimiento-body {
+        text-align: center;
+    }
+
+    .procedimiento-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+    }
+
+    .procedimiento-content h2 {
+        font-size: 1.8rem;
+        color: #000;
+        margin-bottom: 20px;
+        font-family: 'Georgia', serif;
+    }
+
+    .procedimiento-mensaje, .procedimiento-extra {
+        text-align: left;
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border-left: 4px solid #25D366;
+    }
+
+    .procedimiento-mensaje p, .procedimiento-extra p {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .procedimiento-mensaje ul, .procedimiento-extra ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .procedimiento-mensaje li, .procedimiento-extra li {
+        color: #555;
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    .btn-confirmar {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 32px;
+        background: #25D366;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-confirmar:hover {
+        background: #20BA5A;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-confirmar svg {
+        width: 24px;
+        height: 24px;
     }
 
     /* Sección de Bocaditos Catálogo */
@@ -495,6 +719,8 @@ const categorias = [
         align-items: center;
         gap: 12px;
         padding: 16px 32px;
+            border: none;
+            cursor: pointer;
         background: #25D366;
         color: white;
         text-decoration: none;
@@ -635,6 +861,29 @@ const categorias = [
         .btn-whatsapp {
             padding: 14px 24px;
             font-size: 1rem;
+        }
+
+        .btn-whatsapp-comprar {
+            font-size: 0.9rem;
+            padding: 10px;
+        }
+
+        .btn-whatsapp-comprar svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .procedimiento-content {
+            padding: 30px 20px;
+        }
+
+        .procedimiento-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .btn-confirmar {
+            padding: 12px 24px;
+            font-size: 0.95rem;
         }
 
         .buscador-input {
@@ -819,5 +1068,73 @@ const categorias = [
                 }, 100);
             }
         }
+
+        // Modal de Procedimiento
+        const procedimientoModal = document.getElementById('procedimiento-modal') as HTMLElement;
+        const procedimientoClose = document.querySelector('.procedimiento-close') as HTMLElement;
+        const procedimientoLink = document.getElementById('procedimiento-whatsapp') as HTMLAnchorElement;
+        const procedimientoPersonalizado = document.getElementById('procedimiento-personalizado') as HTMLElement;
+
+        // Agregar evento click a todos los botones de comprar en WhatsApp
+        document.querySelectorAll('.btn-whatsapp-comprar, .btn-whatsapp[data-tipo]').forEach((btn) => {
+            btn.addEventListener('click', function(this: HTMLElement, e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const producto = this.getAttribute('data-producto') || '';
+                const tipo = this.getAttribute('data-tipo') || 'clasico';
+
+                // Mostrar/ocultar mensaje de personalizado
+                if (procedimientoPersonalizado) {
+                    procedimientoPersonalizado.style.display = tipo === 'personalizado' ? 'block' : 'none';
+                }
+
+                // Construir URL de WhatsApp
+                const mensaje = tipo === 'personalizado'
+                    ? `Hola Kusisa, me interesa cotizar un ${producto}`
+                    : `Hola Kusisa, me interesa comprar ${producto}`;
+                const urlWhatsApp = `https://wa.me/51946126449?text=${encodeURIComponent(mensaje)}`;
+
+                // Actualizar link de WhatsApp
+                if (procedimientoLink) {
+                    procedimientoLink.href = urlWhatsApp;
+                }
+
+                // Mostrar modal
+                if (procedimientoModal) {
+                    procedimientoModal.classList.add('activo');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Cerrar modal
+        if (procedimientoClose && procedimientoModal) {
+            procedimientoClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                procedimientoModal.classList.remove('activo');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Cerrar modal al hacer click en el fondo
+        if (procedimientoModal) {
+            procedimientoModal.addEventListener('click', function(e) {
+                if (e.target === procedimientoModal) {
+                    procedimientoModal.classList.remove('activo');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && procedimientoModal) {
+                procedimientoModal.classList.remove('activo');
+                document.body.style.overflow = '';
+            }
+        });
     });
+
+
+
 </script>
