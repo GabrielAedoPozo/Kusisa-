@@ -270,7 +270,7 @@ const categorias = [
         max-width: 600px;
         margin: 0 auto 30px;
     }
-
+x
     .buscador-input-wrapper {
         position: relative;
         display: flex;
@@ -497,12 +497,13 @@ const categorias = [
         height: 20px;
     }
 
-    /* Overlay para productos personalizados */
+        /* Overlay para productos personalizados */
     .producto-overlay-personalizado {
         position: absolute;
-        left: 50%;
+        left: 16px;
+        right: 16px;
         bottom: 14px;
-        transform: translateX(-50%);
+        transform: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -510,7 +511,26 @@ const categorias = [
         background: transparent;
         width: auto;
         padding: 0;
+        z-index: 2;
+    }``
+
+    .producto-overlay-personalizado .btn-whatsapp-comprar {
+        width: 100%;
     }
+
+    /* ...existing code... */
+
+    @media (max-width: 768px) {
+        /* ...existing code... */
+
+        .producto-overlay-personalizado {
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+
+     
+
 
     /* Modal de Procedimiento */
     .procedimiento-modal {
