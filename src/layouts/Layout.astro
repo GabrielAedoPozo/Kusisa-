@@ -4,6 +4,7 @@ import '@fontsource/onest/400.css';
 import '@fontsource/onest/500.css';
 import '@fontsource/onest/600.css';
 import '@fontsource/onest/700.css';
+import CookieBanner from '../components/cookie-banner.astro';
 
 interface Props {
 	title?: string;
@@ -105,6 +106,7 @@ const fullImage = image.startsWith('http') ? image : new URL(image, siteUrl).toS
 	</head>
 	<body>
 		<slot />
+		<CookieBanner />
 		
 
 		<a href="https://wa.me/51946126449?text=Hola%2C%20estoy%20interesado%20en%3A" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="whatsapp-button">

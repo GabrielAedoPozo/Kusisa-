@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+
+const seoProps = {
+	title: 'Cookies y privacidad | Kusisa Repostería',
+	description: 'Conoce cómo Kusisa Repostería utiliza cookies esenciales y cómo gestionar tus preferencias de privacidad.',
+	image: '/img/kusisa-og.png',
+	ogType: 'website'
+};
+---
+
+<Layout {...seoProps}>
+	<Header />
+
+	<main class="cookies-page">
+		<section class="cookies-hero">
+			<p class="cookies-kicker">Privacidad y transparencia</p>
+			<h1>Cookies y privacidad</h1>
+			<p>
+				Aquí explicamos qué cookies usamos, para qué sirven y cómo puedes cambiar tu decisión en cualquier momento.
+			</p>
+			<div class="cookies-actions">
+				<a class="cookies-link" href="/">Volver al inicio</a>
+			</div>
+		</section>
+
+		<section class="cookies-card">
+			<h2>1. Qué cookies usamos</h2>
+			<ul>
+				<li><strong>Esenciales:</strong> necesarias para que el sitio funcione correctamente.</li>
+				<li><strong>Analíticas:</strong> opcionales, se usarán solo si las aceptas para medir tráfico y mejorar la experiencia.</li>
+			</ul>
+		</section>
+
+		<section class="cookies-card">
+			<h2>2. Cómo gestionamos tu elección</h2>
+			<p>
+				Tu preferencia se guarda en una cookie del navegador para que no vuelva a mostrarse el aviso en cada visita.
+				Si más adelante incorporamos herramientas de analítica, respetaremos la configuración que hayas elegido.
+			</p>
+		</section>
+
+		<section class="cookies-card">
+			<h2>3. Cómo cambiar o borrar cookies</h2>
+			<p>
+				Puedes borrar las cookies desde la configuración de tu navegador.
+			</p>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.cookies-page {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem 2rem;
+	}
+
+	.cookies-hero {
+		background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+		border: 1px solid #e5e7eb;
+		border-radius: 24px;
+		padding: 2.5rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+		margin-bottom: 1.5rem;
+	}
+
+	.cookies-kicker {
+		margin: 0 0 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: #6b7280;
+	}
+
+	.cookies-hero h1 {
+		margin: 0 0 1rem;
+		font-family: 'Georgia', serif;
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		color: #111827;
+	}
+
+	.cookies-hero p {
+		margin: 0;
+		max-width: 65ch;
+		color: #4b5563;
+		line-height: 1.7;
+	}
+
+	.cookies-actions {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+		margin-top: 1.5rem;
+	}
+
+	.cookies-link {
+		border-radius: 999px;
+		padding: 0.9rem 1.3rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.cookies-link {
+		background: #f3f4f6;
+		color: #111827;
+	}
+
+	.cookies-card {
+		background: white;
+		border: 1px solid #e5e7eb;
+		border-radius: 20px;
+		padding: 1.75rem 2rem;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+		margin-bottom: 1rem;
+	}
+
+	.cookies-card h2 {
+		margin: 0 0 0.75rem;
+		color: #111827;
+		font-size: 1.3rem;
+	}
+
+	.cookies-card p,
+	.cookies-card li {
+		color: #4b5563;
+		line-height: 1.7;
+	}
+
+	.cookies-card ul {
+		margin: 0;
+		padding-left: 1.2rem;
+	}
+
+	@media (max-width: 768px) {
+		.cookies-page {
+			padding: 2rem 1rem 1.5rem;
+		}
+
+		.cookies-hero,
+		.cookies-card {
+			padding: 1.5rem;
+		}
+
+		.cookies-link {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>
