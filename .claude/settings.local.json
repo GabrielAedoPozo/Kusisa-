@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-Content \"d:\\\\Dev\\\\Kusisa-\\\\public\\\\favicon.svg\")",
+      "PowerShell(Copy-Item \"d:\\\\Dev\\\\Kusisa-\\\\public\\\\kusisa-cir.png\" -Destination \"d:\\\\Dev\\\\Kusisa-\\\\public\\\\favicon.ico\" -Force)",
+      "PowerShell(Copy-Item \"d:\\\\Dev\\\\Kusisa-\\\\public\\\\kusisa-cir.png\" -Destination \"d:\\\\Dev\\\\Kusisa-\\\\public\\\\favicon.png\" -Force)",
+      "PowerShell($file = \"d:\\\\Dev\\\\Kusisa-\\\\public\\\\favicon.ico\"; $info = Get-Item $file; Write-Output \"Size: $\\($info.Length\\) bytes\"; Write-Output \"Last modified: $\\($info.LastWriteTime\\)\")",
+      "PowerShell($orig = Get-Item \"d:\\\\Dev\\\\Kusisa-\\\\public\\\\kusisa-cir.png\"; Write-Output \"Original kusisa-cir.png size: $\\($orig.Length\\) bytes\")"
+    ]
+  }
+}
